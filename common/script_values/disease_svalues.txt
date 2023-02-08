@@ -1,0 +1,58 @@
+﻿pop_yearly_food_consumption_svalue = {
+	add = {
+		value = num_of_nobles
+		multiply = -6
+	}
+	add = {
+		value = num_of_citizen
+		multiply = -3.6
+	}
+	add = {
+		value = num_of_freemen
+		multiply = -2.4
+	}
+	add = {
+		value = num_of_slaves
+		multiply = -1.2
+	}
+	add = {
+		value = num_of_tribesmen
+		multiply = -1.2
+	}
+}
+
+sanitation_svalue = {
+	### Province Scope; the idea is to have a dynamic value whether a disease breaking out is possible or not
+	### Add whatever parameters you want to have an impact
+	### TODO: Make visible in province view gui
+
+	add = {
+		value = total_population
+		multiply = -0.1 # every X percent pop reduces sanitation
+	}
+
+	add = { # Well-fed --> better immune system; can go negative, indicating the opposite
+		value = state.has_state_food
+		add = {
+			value = pop_yearly_food_consumption_svalue # negative value
+			multiply = 2 # amount of years
+		}
+		# so that food isn't too strong; to be refined
+		min = -10 # immune system gets way weaker than what the maximum benefits are
+		max = 5
+	}
+
+	# Sanitary Buildings; make a tooltip marking sanitary effect in the affected buildings
+	add = num_of_aqueduct_building # reassess in case of dissociation with housing function
+
+	# The following are "unsanitary" buildings; make tooltips
+	subtract = num_of_workshop_building
+	subtract = num_of_port_building
+
+	if = { # the desert is generally too hot and difficult for quite a few bacteria
+		limit = {
+			terrain = desert
+		}
+		add = 3
+	}
+}

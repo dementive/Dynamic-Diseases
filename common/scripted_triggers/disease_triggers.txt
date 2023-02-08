@@ -1,0 +1,72 @@
+﻿has_province_disease_trigger = {
+	### Add all new diseases here
+	OR = {
+		has_province_modifier = disease_1_pmod # Plague
+		has_province_modifier = disease_2_pmod # Anthrax
+		has_province_modifier = disease_3_pmod # Tularemia
+		has_province_modifier = disease_4_pmod # Typhus - No distinction with typhoid fever at this time
+		has_province_modifier = disease_5_pmod # Cholera
+		has_province_modifier = disease_6_pmod # Leprosy
+		has_province_modifier = disease_7_pmod # Smallpox
+		has_province_modifier = disease_8_pmod # Tuberculosis
+		has_province_modifier = disease_9_pmod # Influenza - Flu
+		has_province_modifier = disease_10_pmod # Poliomyelitis - Polio
+		has_province_modifier = disease_11_pmod # Measles
+		has_province_modifier = disease_12_pmod # Malaria
+		has_province_modifier = disease_13_pmod # Dysentery
+		has_province_modifier = disease_14_pmod # Mentagra
+		has_province_modifier = disease_15_pmod # Cold Fever - Common Cold
+		has_province_modifier = disease_16_pmod # Trachoma
+	}
+}
+
+is_highly_contagious_trigger = { # spread easily; the spread event will have them spread to more territories at a time.
+	OR = { #either "Regular" contagion or not contagious
+		has_province_modifier = disease_1_pmod # Plague
+		#has_province_modifier = disease_2_pmod # Anthrax - water, spores
+		#has_province_modifier = disease_3_pmod # Tularemia - does not spread; infected via ticks and similar
+		#has_province_modifier = disease_4_pmod # Typhus - No distinction with typhoid fever at this time
+		#has_province_modifier = disease_5_pmod # Cholera - only spreads if water is contaminated
+		#has_province_modifier = disease_6_pmod # Leprosy - prolonged contact (a month can be enough)
+		has_province_modifier = disease_7_pmod # Smallpox 
+		has_province_modifier = disease_8_pmod # Tuberculosis
+		has_province_modifier = disease_9_pmod # Influenza - Flu
+		has_province_modifier = disease_10_pmod # Poliomyelitis - Polio; while spreading easily, bad cases were rare before the modern age
+		has_province_modifier = disease_11_pmod # Measles - rare before AD
+		#has_province_modifier = disease_12_pmod # Malaria - unsure if the spread by mosquito should be included here
+		#has_province_modifier = disease_13_pmod # Dysentery - spreads via contaminated water
+		#has_province_modifier = disease_14_pmod # Mentagra
+		has_province_modifier = disease_15_pmod # Cold Fever - Common Cold
+		has_province_modifier = disease_16_pmod # Trachoma
+	}
+	# trigger_if = {
+	# 	limit = {
+	# 		OR = {
+	# 			has_province_modifier = disease_3_pmod # Tularemia
+	# 			has_province_modifier = disease_6_pmod # Leprosy
+	# 		}
+	# 	}
+	# }
+}
+
+has_unit_disease_trigger = {
+	### Add all new diseases here
+	OR = {
+		has_unit_modifier = disease_1_unit_mod # Plague
+		has_unit_modifier = disease_2_unit_mod # Anthrax
+		has_unit_modifier = disease_3_unit_mod # Tularemia
+		has_unit_modifier = disease_4_unit_mod # Typhus - No distinction with typhoid fever at this time
+		has_unit_modifier = disease_5_unit_mod # Cholera
+		has_unit_modifier = disease_6_unit_mod # Leprosy
+		has_unit_modifier = disease_7_unit_mod # Smallpox
+		has_unit_modifier = disease_8_unit_mod # Tuberculosis
+		has_unit_modifier = disease_9_unit_mod # Influenza - Flu
+		has_unit_modifier = disease_10_unit_mod # Poliomyelitis - Polio
+		has_unit_modifier = disease_11_unit_mod # Measles
+		has_unit_modifier = disease_12_unit_mod # Malaria
+		has_unit_modifier = disease_13_unit_mod # Dysentery
+		has_unit_modifier = disease_14_unit_mod # Mentagra
+		has_unit_modifier = disease_15_unit_mod # Cold Fever - Common Cold
+		has_unit_modifier = disease_16_mod # Trachoma
+	}
+}

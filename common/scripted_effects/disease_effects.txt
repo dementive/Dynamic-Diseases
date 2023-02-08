@@ -1,0 +1,837 @@
+﻿disease_spread_effect = {
+	### Add all new diseases here
+	### 1 year as placeholder value; ideally dynamic and depending on disease.
+	if = {
+		limit = {
+			owner = {
+				has_global_variable = plague_happening
+			}
+			any_neighbor_province = {
+				has_province_modifier = disease_1_pmod
+				NOT = { # try to not make it 100% safe, since we all know that it's not 100% working...
+					has_province_modifier = quarantine_pmod
+				}
+			}
+		}
+		add_province_modifier = {
+			name = disease_1_pmod
+			duration = 365 # 1 year
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_global_variable = anthrax_happening
+			}
+			any_neighbor_province = {
+				has_province_modifier = disease_2_pmod
+			}
+		}
+		add_province_modifier = {
+			name = disease_2_pmod
+			duration = 365 # 1 year
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_global_variable = tularemia_happening
+			}
+			any_neighbor_province = {
+				has_province_modifier = disease_3_pmod
+			}
+		}
+		add_province_modifier = {
+			name = disease_3_pmod
+			duration = 365 # 1 year
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_global_variable = typhus_happening
+			}
+			any_neighbor_province = {
+				has_province_modifier = disease_4_pmod
+			}
+		}
+		add_province_modifier = {
+			name = disease_4_pmod
+			duration = 365 # 1 year
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_global_variable = cholera_happening
+			}
+			any_neighbor_province = {
+				has_province_modifier = disease_5_pmod
+			}
+		}
+		add_province_modifier = {
+			name = disease_5_pmod
+			duration = 365 # 1 year
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_global_variable = leprosy_happening
+			}
+			any_neighbor_province = {
+				has_province_modifier = disease_6_pmod
+				NOT = {
+					has_province_modifier = leper_colony
+				}
+			}
+		}
+		add_province_modifier = {
+			name = disease_6_pmod
+			duration = 365 # 1 year
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_global_variable = smallpox_happening
+			}
+			any_neighbor_province = {
+				has_province_modifier = disease_7_pmod
+			}
+		}
+		add_province_modifier = {
+			name = disease_7_pmod
+			duration = 365 # 1 year
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_global_variable = tuberculosis_happening
+			}
+			any_neighbor_province = {
+				has_province_modifier = disease_8_pmod
+			}
+		}
+		add_province_modifier = {
+			name = disease_8_pmod
+			duration = 365 # 1 year
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_global_variable = flu_happening
+			}
+			any_neighbor_province = {
+				has_province_modifier = disease_9_pmod
+			}
+		}
+		add_province_modifier = {
+			name = disease_9_pmod
+			duration = 365 # 1 year
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_global_variable = polio_happening
+			}
+			any_neighbor_province = {
+				has_province_modifier = disease_10_pmod
+			}
+		}
+		add_province_modifier = {
+			name = disease_10_pmod
+			duration = 365 # 1 year
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_global_variable = measles_happening
+			}
+			any_neighbor_province = {
+				has_province_modifier = disease_11_pmod
+			}
+		}
+		add_province_modifier = {
+			name = disease_11_pmod
+			duration = 365 # 1 year
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_global_variable = malaria_happening
+			}
+			any_neighbor_province = {
+				has_province_modifier = disease_12_pmod
+			}
+		}
+		add_province_modifier = {
+			name = disease_12_pmod
+			duration = 365 # 1 year
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_global_variable = dysentery_happening
+			}
+			any_neighbor_province = {
+				has_province_modifier = disease_13_pmod
+			}
+		}
+		add_province_modifier = {
+			name = disease_13_pmod
+			duration = 365 # 1 year
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_global_variable = mentagra_happening
+			}
+			any_neighbor_province = {
+				has_province_modifier = disease_14_pmod
+			}
+		}
+		add_province_modifier = {
+			name = disease_14_pmod
+			duration = 365 # 1 year
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_global_variable = cold_fever_happening
+			}
+			any_neighbor_province = {
+				has_province_modifier = disease_15_pmod
+			}
+		}
+		add_province_modifier = {
+			name = disease_15_pmod
+			duration = 365 # 1 year
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_global_variable = trachoma_happening
+			}
+			any_neighbor_province = {
+				has_province_modifier = disease_16_pmod
+			}
+		}
+		add_province_modifier = {
+			name = disease_16_pmod
+			duration = 365 # 1 year
+		}
+	}
+}
+
+disease_pop_death_effect = { # Plague
+	if = {
+		limit = {
+			has_province_modifier = disease_1_pmod
+		}
+		ordered_pops_in_province = {
+			order_by = pop_hapiness
+			max = {
+				value = total_population
+				multiply = 0.5 # 30-60 historically
+				round = floor
+			}
+			check_range_bounds = no
+			kill_pop = yes
+		}
+	}
+	else_if = { # Anthrax
+		limit = {
+			has_province_modifier = disease_2_pmod
+		}
+		ordered_pops_in_province = {
+			order_by = pop_hapiness
+			max = {
+				value = total_population
+				multiply = 0.5 # 25-80%
+				round = floor
+			}
+			check_range_bounds = no
+			kill_pop = yes
+		}
+	}
+	else_if = { # Tularemia
+		limit = {
+			has_province_modifier = disease_3_pmod
+		}
+		ordered_pops_in_province = {
+			order_by = pop_hapiness
+			max = {
+				value = total_population
+				multiply = 0.4 # 30-60%
+				round = floor
+			}
+			check_range_bounds = no
+			kill_pop = yes
+		}
+	}
+	else_if = { # Typhus
+		limit = {
+			has_province_modifier = disease_4_pmod
+		}
+		ordered_pops_in_province = {
+			order_by = pop_hapiness
+			max = {
+				value = total_population
+				multiply = 0.3 # 10-60%
+				round = floor
+			}
+			check_range_bounds = no
+			kill_pop = yes
+		}
+	}
+	else_if = { # Cholera
+		limit = {
+			has_province_modifier = disease_5_pmod
+		}
+		ordered_pops_in_province = {
+			order_by = pop_hapiness
+			max = {
+				value = total_population
+				multiply = 0.3 # 25-50%
+				round = floor
+			}
+			check_range_bounds = no
+			kill_pop = yes
+		}
+	}
+	else_if = { # Leprosy
+		limit = {
+			has_province_modifier = disease_6_pmod
+		}
+		ordered_pops_in_province = {
+			order_by = pop_hapiness
+			max = {
+				value = total_population
+				multiply = 0.1 # very slow; will cripple you though in any case in this era
+				round = floor
+			}
+			check_range_bounds = no
+			kill_pop = yes
+		}
+	}
+	else_if = { # Smallpox
+		limit = {
+			has_province_modifier = disease_7_pmod
+		}
+		ordered_pops_in_province = {
+			order_by = pop_hapiness
+			max = {
+				value = total_population
+				multiply = 0.25 # 2 variations; 1% and 30%
+				round = floor
+			}
+			check_range_bounds = no
+			kill_pop = yes
+		}
+	}
+	else_if = { # Tuberculosis
+		limit = {
+			has_province_modifier = disease_8_pmod
+		}
+		ordered_pops_in_province = {
+			order_by = pop_hapiness
+			max = {
+				value = total_population
+				multiply = 0.4 # around 40%
+				round = floor
+			}
+			check_range_bounds = no
+			kill_pop = yes
+		}
+	}
+	else_if = { # Flu
+		limit = {
+			has_province_modifier = disease_9_pmod
+		}
+		ordered_pops_in_province = {
+			order_by = pop_hapiness
+			max = {
+				value = total_population
+				multiply = 0.02 # not really supposed to kill; usually non-lethal
+				round = floor
+			}
+			check_range_bounds = no
+			kill_pop = yes
+		}
+	}
+	else_if = { # Polio - Rare
+		limit = {
+			has_province_modifier = disease_10_pmod
+		}
+		ordered_pops_in_province = {
+			order_by = pop_hapiness
+			max = {
+				value = total_population
+				multiply = 0.1 # 15-30% in adults and 2-5% in children; assuming people are young on average
+				round = floor
+			}
+			check_range_bounds = no
+			kill_pop = yes
+		}
+	}
+	else_if = { # Measles - 
+		limit = {
+			has_province_modifier = disease_11_pmod
+		}
+		ordered_pops_in_province = {
+			order_by = pop_hapiness
+			max = {
+				value = total_population
+				multiply = 0.03 # rarely deadly; in the game period rare; it's lethality lay therein that it occurred every 2-3 years and spread fast
+				round = floor
+			}
+			check_range_bounds = no
+			kill_pop = yes
+		}
+	}
+	else_if = { # Malaria
+		limit = {
+			has_province_modifier = disease_12_pmod
+		}
+		ordered_pops_in_province = {
+			order_by = pop_hapiness
+			max = {
+				value = total_population
+				multiply = 0.05 #around 5%; it's commonality was a big reason for the death rate
+				round = floor
+			}
+			check_range_bounds = no
+			kill_pop = yes
+		}
+	}
+	else_if = { # Dysentery
+		limit = {
+			has_province_modifier = disease_13_pmod
+		}
+		ordered_pops_in_province = {
+			order_by = pop_hapiness
+			max = {
+				value = total_population
+				multiply = 0.05 # 5% for dysentery
+				round = floor
+			}
+			check_range_bounds = no
+			kill_pop = yes
+		}
+	}
+	# else_if = { # Mentagra - Not deadly
+	# 	limit = {
+	# 		has_province_modifier = disease_14_pmod
+	# 	}
+	# 	ordered_pops_in_province = {
+	# 		order_by = pop_hapiness
+	# 		max = {
+	# 			value = total_population
+	# 			multiply = 0.001
+	# 			round = floor
+	# 		}
+	# 		check_range_bounds = no
+	# 		kill_pop = yes
+	# 	}
+	# }
+	# else_if = { # Common Cold
+	# 	limit = {
+	# 		has_province_modifier = disease_15_pmod
+	# 	}
+	# 	ordered_pops_in_province = {
+	# 		order_by = pop_hapiness
+	# 		max = {
+	# 			value = total_population
+	# 			multiply = 0.001 # not deadly
+	# 			round = floor
+	# 		}
+	# 		check_range_bounds = no
+	# 		kill_pop = yes
+	# 	}
+	# }
+	# else_if = { # Trachoma
+	# 	limit = {
+	# 		has_province_modifier = disease_16_pmod
+	# 	}
+	# 	ordered_pops_in_province = {
+	# 		order_by = pop_hapiness
+	# 		max = {
+	# 			value = total_population
+	# 			multiply = 0.001 # rarely deadly
+	# 			round = floor
+	# 		}
+	# 		check_range_bounds = no
+	# 		kill_pop = yes
+	# 	}
+	# }
+}
+
+unit_disease_effect = { # unit scope
+	if = {
+		limit = {
+			unit_location = {
+				has_province_modifier = disease_1_pmod
+			}
+		}
+		add_unit_modifier = {
+			name = disease_1_unit_mod
+			duration = 365 
+		}
+	}
+	else_if = {
+		limit = {
+			unit_location = {
+				has_province_modifier = disease_2_pmod
+			}
+		}
+		add_unit_modifier = {
+			name = disease_2_unit_mod
+			duration = 365 
+		}
+	}
+	else_if = {
+		limit = {
+			unit_location = {
+				has_province_modifier = disease_3_pmod
+			}
+		}
+		add_unit_modifier = {
+			name = disease_3_unit_mod
+			duration = 365 
+		}
+	}
+	else_if = {
+		limit = {
+			unit_location = {
+				has_province_modifier = disease_4_pmod
+			}
+		}
+		add_unit_modifier = {
+			name = disease_4_unit_mod
+			duration = 365 
+		}
+	}
+	else_if = {
+		limit = {
+			unit_location = {
+				has_province_modifier = disease_5_pmod
+			}
+		}
+		add_unit_modifier = {
+			name = disease_5_unit_mod
+			duration = 365 
+		}
+	}
+	else_if = {
+		limit = {
+			unit_location = {
+				has_province_modifier = disease_6_pmod
+			}
+		}
+		add_unit_modifier = {
+			name = disease_6_unit_mod
+			duration = 365 
+		}
+	}
+	else_if = {
+		limit = {
+			unit_location = {
+				has_province_modifier = disease_7_pmod
+			}
+		}
+		add_unit_modifier = {
+			name = disease_7_unit_mod
+			duration = 365 
+		}
+	}
+	else_if = {
+		limit = {
+			unit_location = {
+				has_province_modifier = disease_8_pmod
+			}
+		}
+		add_unit_modifier = {
+			name = disease_8_unit_mod
+			duration = 365 
+		}
+	}
+	else_if = {
+		limit = {
+			unit_location = {
+				has_province_modifier = disease_9_pmod
+			}
+		}
+		add_unit_modifier = {
+			name = disease_9_unit_mod
+			duration = 365 
+		}
+	}
+	else_if = {
+		limit = {
+			unit_location = {
+				has_province_modifier = disease_10_pmod
+			}
+		}
+		add_unit_modifier = {
+			name = disease_10_unit_mod
+			duration = 365 
+		}
+	}
+	else_if = {
+		limit = {
+			unit_location = {
+				has_province_modifier = disease_11_pmod
+			}
+		}
+		add_unit_modifier = {
+			name = disease_11_unit_mod
+			duration = 365 
+		}
+	}
+	else_if = {
+		limit = {
+			unit_location = {
+				has_province_modifier = disease_12_pmod
+			}
+		}
+		add_unit_modifier = {
+			name = disease_12_unit_mod
+			duration = 365 
+		}
+	}
+	else_if = {
+		limit = {
+			unit_location = {
+				has_province_modifier = disease_13_pmod
+			}
+		}
+		add_unit_modifier = {
+			name = disease_13_unit_mod
+			duration = 365 
+		}
+	}
+	else_if = {
+		limit = {
+			unit_location = {
+				has_province_modifier = disease_14_pmod
+			}
+		}
+		add_unit_modifier = {
+			name = disease_14_unit_mod
+			duration = 365 
+		}
+	}
+	else_if = {
+		limit = {
+			unit_location = {
+				has_province_modifier = disease_15_pmod
+			}
+		}
+		add_unit_modifier = {
+			name = disease_15_unit_mod
+			duration = 365 
+		}
+	}
+	else_if = {
+		limit = {
+			unit_location = {
+				has_province_modifier = disease_16_pmod
+			}
+		}
+		add_unit_modifier = {
+			name = disease_16_unit_mod
+			duration = 365 
+		}
+	}
+}
+
+unit_to_territory_disease_effect = {
+	if = {
+		limit = {
+			has_unit_modifier = disease_1_unit_mod
+		}
+		unit_location = {
+			add_province_modifier = {
+				name = disease_1_pmod
+				duration = 365
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_unit_modifier = disease_2_unit_mod
+		}
+		unit_location = {
+			add_province_modifier = {
+				name = disease_2_pmod
+				duration = 365
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_unit_modifier = disease_3_unit_mod
+		}
+		unit_location = {
+			add_province_modifier = {
+				name = disease_3_pmod
+				duration = 365
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_unit_modifier = disease_4_unit_mod
+		}
+		unit_location = {
+			add_province_modifier = {
+				name = disease_4_pmod
+				duration = 365
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_unit_modifier = disease_5_unit_mod
+		}
+		unit_location = {
+			add_province_modifier = {
+				name = disease_5_pmod
+				duration = 365
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_unit_modifier = disease_6_unit_mod
+		}
+		unit_location = {
+			add_province_modifier = {
+				name = disease_6_pmod
+				duration = 365
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_unit_modifier = disease_7_unit_mod
+		}
+		unit_location = {
+			add_province_modifier = {
+				name = disease_7_pmod
+				duration = 365
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_unit_modifier = disease_8_unit_mod
+		}
+		unit_location = {
+			add_province_modifier = {
+				name = disease_8_pmod
+				duration = 365
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_unit_modifier = disease_9_unit_mod
+		}
+		unit_location = {
+			add_province_modifier = {
+				name = disease_9_pmod
+				duration = 365
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_unit_modifier = disease_10_unit_mod
+		}
+		unit_location = {
+			add_province_modifier = {
+				name = disease_10_pmod
+				duration = 365
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_unit_modifier = disease_11_unit_mod
+		}
+		unit_location = {
+			add_province_modifier = {
+				name = disease_11_pmod
+				duration = 365
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_unit_modifier = disease_12_unit_mod
+		}
+		unit_location = {
+			add_province_modifier = {
+				name = disease_12_pmod
+				duration = 365
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_unit_modifier = disease_13_unit_mod
+		}
+		unit_location = {
+			add_province_modifier = {
+				name = disease_13_pmod
+				duration = 365
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_unit_modifier = disease_14_unit_mod
+		}
+		unit_location = {
+			add_province_modifier = {
+				name = disease_14_pmod
+				duration = 365
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_unit_modifier = disease_15_unit_mod
+		}
+		unit_location = {
+			add_province_modifier = {
+				name = disease_15_pmod
+				duration = 365
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_unit_modifier = disease_16_unit_mod
+		}
+		unit_location = {
+			add_province_modifier = {
+				name = disease_16_pmod
+				duration = 365
+			}
+		}
+	}
+}
+
+disease_unit_damage_effect = {} #damage_unit_percent; damage_unit_morale_percent

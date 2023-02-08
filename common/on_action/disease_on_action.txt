@@ -1,0 +1,32 @@
+﻿monthly_country_pulse = {
+    on_actions = {
+        disease_pulse
+        delay = { days = { 1 29 } }
+    }
+}
+
+disease_pulse = {
+    trigger = {
+        current_date >= 460.1.1 # so there is some time to build stuff before any event fires
+        any_owned_province = {
+            OR = {
+                sanitation_svalue <= 0
+                has_province_disease_trigger = yes
+                any_neighbor_province = {
+                    has_province_disease_trigger = yes
+                }
+            }
+        }
+    }
+
+    random_events = {
+        5000 = 0
+        10 = rip_disease.1 # Disease start; hidden event; will chose what disease to spawn based of a random list
+        # use this mostly to regulate how often it happens in the first place; consider that it will trigger for everyone.
+    }
+
+    events = {
+        rip_disease.100 # disease spread
+        rip_disease.200 # disease pop death and unit damages
+    }
+}

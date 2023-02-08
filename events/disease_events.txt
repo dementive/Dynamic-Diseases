@@ -1,0 +1,1140 @@
+﻿namespace = rip_disease
+
+### Disease List so far (for overview purposes)
+# Plague
+# Anthrax
+# Tularemia
+# Typhus - No distinction with typhoid fever (that is similar, but not the same) at this time
+# Cholera
+# Leprosy
+# Smallpox
+# Tuberculosis
+# Influenza - Flu
+# Poliomyelitis - Polio
+# Measles
+# Malaria
+# Dysentery
+# Mentagra (Sycosis)
+# Cold Fever - Common Cold
+# Trachoma
+
+# No Siphylis; it probably is from the new world and appeared in Europe after Columbus' voyage.
+
+### TODO: Duration of disease "clusters" (differentiate betwteen disease)
+
+rip_disease.1 = { # Disease Start
+	type = country_event
+	# title = rip_disease.1.t
+	# desc = rip_disease.1.desc
+	# picture = senator_conversing # maybe make custom pic?
+	# left_portrait = current_ruler
+
+	hidden = yes
+
+	#goto_location = scope:disease_province
+
+	trigger = {
+		NOT = {
+			has_variable = recently_disease_appeared
+		}
+	}
+
+	immediate = {
+		set_variable = {
+			name = recently_disease_appeared
+			days = 1825 # 5 years
+		}
+		random_owned_province = {
+			limit = {
+				sanitation_svalue <= 0
+			}
+			save_scope_as = disease_province
+			random_list = {
+				### For each new disease a new list item; vary chances as is realistic or as imposed by gameplay.
+				1 = { # Plague - all 3 versions in one; rare, but deadly
+					trigger = {
+						NOT = {
+							has_global_variable = plague_happening
+						}
+					}
+					trigger_event = {
+						id = rip_disease.2
+					}
+					set_global_variable = {
+						name = plague_happening
+						days = 5475 # 15 years
+					}
+				}
+				1 = { # Anthrax - rare
+					trigger = {
+						NOT = {
+							has_global_variable = anthrax_happening
+						}
+					}
+					set_global_variable = {
+						name = anthrax_happening
+						days = 3650 # 10 years
+					}
+					trigger_event = {
+						id = rip_disease.3
+					}
+				}
+				5 = { # Tularemia
+					trigger = {
+						NOT = {
+							has_global_variable = tularemia_happening
+						}
+					}
+					set_global_variable = {
+						name = tularemia_happening
+						days = 3650 # 10 years
+					}
+					trigger_event = {
+						id = rip_disease.4
+					}
+				}
+				10 = { # Typhus - No distinction with typhoid fever at this time
+					trigger = {
+						NOT = {
+							has_global_variable = typhus_happening
+						}
+					}
+					set_global_variable = {
+						name = typhus_happening
+						days = 3650 # 10 years
+					}
+					modifier = {
+						add = {
+							value = total_population # the more ppl there are...
+							multiply = 0.25
+						}
+					}
+					trigger_event = {
+						id = rip_disease.5
+					}
+				}
+				20 = { # Cholera
+					trigger = {
+						NOT = {
+							has_global_variable = cholera_happening
+						}
+					}
+					modifier = {
+						add = {
+							value = sanitation_svalue # clean water = no risk of cholera
+							multiply = -1
+						}
+					}
+					set_global_variable = {
+						name = cholera_happening
+						days = 3650 # 10 years
+					}
+					trigger_event = {
+						id = rip_disease.6
+					}
+				}
+				10 = { # Leprosy
+					trigger = {
+						NOT = {
+							has_global_variable = leprosy_happening
+						}
+					}
+					set_global_variable = {
+						name = leprosy_happening
+						days = 3650 # 10 years
+					}
+					trigger_event = {
+						id = rip_disease.7
+					}
+				}
+				15 = { # Smallpox
+					trigger = {
+						NOT = {
+							has_global_variable = smallpox_happening
+						}
+					}
+					set_global_variable = {
+						name = smallpox_happening
+						days = 3650 # 10 years
+					}
+					trigger_event = {
+						id = rip_disease.8
+					}
+				}
+				15 = { # Tuberculosis
+					trigger = {
+						NOT = {
+							has_global_variable = tuberculosis_happening
+						}
+					}
+					set_global_variable = {
+						name = tuberculosis_happening
+						days = 3650 # 10 years
+					}
+					trigger_event = {
+						id = rip_disease.9
+					}
+				}
+				20 = { # Influenza - Flu
+					trigger = {
+						NOT = {
+							has_global_variable = flu_happening
+						}
+					}
+					set_global_variable = {
+						name = flu_happening
+						days = 3650 # 10 years
+					}
+					trigger_event = {
+						id = rip_disease.10
+					}
+				}
+				1 = { # Poliomyelitis - Polio - Rare until modern age, but existed
+					trigger = {
+						NOT = {
+							has_global_variable = polio_happening
+						}
+					}
+					trigger_event = {
+						id = rip_disease.11
+					}
+					set_global_variable = {
+						name = polio_happening
+						days = 9125 # 25 years
+					}
+				}
+				1 = { # Measles; rare until AD, but probably did happen
+					trigger = {
+						NOT = {
+							has_global_variable = measles_happening
+						}
+					}
+					set_global_variable = {
+						name = measles_happening
+						days = 3650 # 10 years
+					}
+					trigger_event = {
+						id = rip_disease.12
+					}
+				}
+				10 = { # Malaria
+					# TODO: Locally (Africa, Southern Europe at times) Only
+					trigger = {
+						NOT = {
+							has_global_variable = malaria_happening
+						}
+					}
+					set_global_variable = {
+						name = malaria_happening
+						days = 3650 # 10 years
+					}
+					trigger_event = {
+						id = rip_disease.13
+					}
+				}
+				20 = { # Dysentery
+					modifier = {
+						add = {
+							value = sanitation_svalue # clean water = no risk 
+							multiply = -1
+						}
+					}
+					trigger = {
+						NOT = {
+							has_global_variable = dysentery_happening
+						}
+					}
+					set_global_variable = {
+						name = dysentery_happening
+						days = 3650 # 10 years
+					}
+					trigger_event = {
+						id = rip_disease.14
+					}
+				}
+				20 = { # Mentagra (Sycosis) - Non-dangerous but disfiguring
+					trigger = {
+						NOT = {
+							has_global_variable = mentagra_happening
+						}
+					}
+					set_global_variable = {
+						name = mentagra_happening
+						days = 3650 # 10 years
+					}
+					trigger_event = {
+						id = rip_disease.14
+					}
+				}
+				20 = { # Cold Fever - Common Cold
+					trigger = {
+						NOT = {
+							has_global_variable = cold_fever_happening
+						}
+					}
+					set_global_variable = {
+						name = cold_fever_happening
+						days = 3650 # 10 years
+					}
+					trigger_event = {
+						id = rip_disease.15
+					}
+				}
+				15 = { # Trachoma
+					trigger = {
+						NOT = {
+							has_global_variable = trachoma_happening
+						}
+					}
+					set_global_variable = {
+						name = trachoma_happening
+						days = 3650 # 10 years
+					}
+					trigger_event = {
+						id = rip_disease.16
+					}
+				}
+				# 360 = { # nothing happening - I forgot I trigger this in random_events lol with a low chance. A disease should always trigger
+				# 	remove_variable = recently_disease_appeared
+				# } 
+			}
+		}
+	}
+}
+
+rip_disease.2 = { # Disease Appearing - Plague
+	type = country_event
+	title = rip_disease.2.t
+	desc = rip_disease.2.desc
+	picture = senator_conversing # maybe make custom pic?
+	left_portrait = current_ruler
+
+	goto_location = scope:disease_province
+
+	option = {
+		name = rip_disease.2.a
+		custom_tooltip = possible_spread_tt
+		scope:disease_province = {
+			add_province_modifier = {
+				name = disease_1_pmod # TODO
+				duration = 365 # 1 year
+			}
+			random_pops_in_province = {
+				kill_pop = yes
+			}
+		}
+	}
+	option = {
+		name = rip_disease.2.b
+		custom_tooltip = quarantine_tt
+		scope:disease_province = {
+			add_province_modifier = {
+				name = disease_1_pmod # TODO
+				duration = 365 # 1 year
+			}
+			add_province_modifier = {
+				name = quarantine_pmod # TODO
+				duration = 365 # 1 year
+			}
+			random_pops_in_province = {
+				kill_pop = yes
+			}
+		}
+	}
+}
+
+rip_disease.3 = { # Disease Appearing - Anthrax - Human to Human non-contagious; via water, animals
+	type = country_event
+	title = rip_disease.3.t
+	desc = rip_disease.3.desc
+	picture = senator_conversing # maybe make custom pic?
+	left_portrait = current_ruler
+
+	goto_location = scope:disease_province
+
+	option = {
+		name = rip_disease.3.a
+		scope:disease_province = {
+			add_province_modifier = {
+				name = disease_2_pmod # TODO
+				duration = 365 # 1 year
+			}
+			random_pops_in_province = {
+				kill_pop = yes
+			}
+		}
+	}
+
+	option = {
+		name = rip_disease.3.b
+		custom_tooltip = quarantine_tt
+		scope:disease_province = {
+			add_province_modifier = {
+				name = disease_2_pmod # TODO
+				duration = 365 # 1 year
+			}
+			add_province_modifier = {
+				name = quarantine_pmod # TODO
+				duration = 365 # 1 year
+			}
+			random_pops_in_province = {
+				kill_pop = yes
+			}
+		}
+	}
+}
+
+rip_disease.4 = { # Disease Appearing - Tularemia
+	type = country_event
+	title = rip_disease.4.t
+	desc = rip_disease.4.desc
+	picture = senator_conversing # maybe make custom pic?
+	left_portrait = current_ruler
+
+	goto_location = scope:disease_province
+
+	option = {
+		name = rip_disease.4.a
+		custom_tooltip = possible_spread_tt
+		scope:disease_province = {
+			add_province_modifier = {
+				name = disease_3_pmod # TODO
+				duration = 365 # 1 year
+			}
+			random_pops_in_province = {
+				kill_pop = yes
+			}
+		}
+	}
+	option = {
+		name = rip_disease.4.b
+		custom_tooltip = quarantine_tt
+		scope:disease_province = {
+			add_province_modifier = {
+				name = disease_3_pmod # TODO
+				duration = 365 # 1 year
+			}
+			add_province_modifier = {
+				name = quarantine_pmod # TODO
+				duration = 365 # 1 year
+			}
+			random_pops_in_province = {
+				kill_pop = yes
+			}
+		}
+	}
+}
+
+rip_disease.5 = { # Disease Appearing - Typhus
+	type = country_event
+	title = rip_disease.5.t
+	desc = rip_disease.5.desc
+	picture = senator_conversing # maybe make custom pic?
+	left_portrait = current_ruler
+
+	goto_location = scope:disease_province
+
+	option = {
+		name = rip_disease.5.a
+		scope:disease_province = {
+			add_province_modifier = {
+				name = disease_4_pmod # TODO
+				duration = 365 # 1 year
+			}
+			random_pops_in_province = {
+				kill_pop = yes
+			}
+		}
+	}
+
+	option = {
+		name = rip_disease.5.b
+		custom_tooltip = quarantine_tt
+		scope:disease_province = {
+			add_province_modifier = {
+				name = disease_4_pmod # TODO
+				duration = 365 # 1 year
+			}
+			add_province_modifier = {
+				name = quarantine_pmod # TODO
+				duration = 365 # 1 year
+			}
+			random_pops_in_province = {
+				kill_pop = yes
+			}
+		}
+	}
+}
+
+rip_disease.6 = { # Disease Appearing - Cholera
+	type = country_event
+	title = rip_disease.6.t
+	desc = rip_disease.6.desc
+	picture = senator_conversing # maybe make custom pic?
+	left_portrait = current_ruler
+
+	goto_location = scope:disease_province
+
+	option = {
+		name = rip_disease.6.a
+		scope:disease_province = {
+			add_province_modifier = {
+				name = disease_5_pmod # TODO
+				duration = 365 # 1 year
+			}
+			random_pops_in_province = {
+				kill_pop = yes
+			}
+		}
+	}
+
+	option = {
+		name = rip_disease.6.b
+		custom_tooltip = quarantine_tt
+		scope:disease_province = {
+			add_province_modifier = {
+				name = disease_5_pmod # TODO
+				duration = 365 # 1 year
+			}
+			add_province_modifier = {
+				name = quarantine_pmod # TODO
+				duration = 365 # 1 year
+			}
+			random_pops_in_province = {
+				kill_pop = yes
+			}
+		}
+	}
+}
+
+rip_disease.7 = { # Disease Appearing - Leprosy
+	type = country_event
+	title = rip_disease.7.t
+	desc = rip_disease.7.desc
+	picture = senator_conversing # maybe make custom pic?
+	left_portrait = current_ruler
+
+	goto_location = scope:disease_province
+
+	option = {
+		name = rip_disease.7.a
+		scope:disease_province = {
+			add_province_modifier = {
+				name = disease_6_pmod # TODO
+				duration = 365 # 1 year
+			}
+			random_pops_in_province = {
+				kill_pop = yes
+			}
+		}
+	}
+
+	option = {
+		name = rip_disease.7.b
+		custom_tooltip = quarantine_tt
+		scope:disease_province = {
+			add_province_modifier = {
+				name = disease_6_pmod # TODO
+				duration = 365 # 1 year
+			}
+			add_province_modifier = {
+				name = quarantine_pmod # TODO
+				duration = 365 # 1 year
+			}
+			random_pops_in_province = {
+				kill_pop = yes
+			}
+		}
+	}
+}
+
+rip_disease.8 = { # Disease Appearing - Smallpox
+	type = country_event
+	title = rip_disease.8.t
+	desc = rip_disease.8.desc
+	picture = senator_conversing # maybe make custom pic?
+	left_portrait = current_ruler
+
+	goto_location = scope:disease_province
+
+	option = {
+		name = rip_disease.8.a
+		custom_tooltip = possible_spread_tt
+		scope:disease_province = {
+			add_province_modifier = {
+				name = disease_7_pmod # TODO
+				duration = 365 # 1 year
+			}
+			random_pops_in_province = {
+				kill_pop = yes
+			}
+		}
+	}
+	option = {
+		name = rip_disease.8.b
+		custom_tooltip = quarantine_tt
+		scope:disease_province = {
+			add_province_modifier = {
+				name = disease_7_pmod # TODO
+				duration = 365 # 1 year
+			}
+			add_province_modifier = {
+				name = quarantine_pmod # TODO
+				duration = 365 # 1 year
+			}
+			random_pops_in_province = {
+				kill_pop = yes
+			}
+		}
+	}
+}
+
+rip_disease.9 = { # Disease Appearing - Tuberculosis
+	type = country_event
+	title = rip_disease.9.t
+	desc = rip_disease.9.desc
+	picture = senator_conversing # maybe make custom pic?
+	left_portrait = current_ruler
+
+	goto_location = scope:disease_province
+
+	option = {
+		name = rip_disease.9.a
+		scope:disease_province = {
+			add_province_modifier = {
+				name = disease_8_pmod # TODO
+				duration = 365 # 1 year
+			}
+			random_pops_in_province = {
+				kill_pop = yes
+			}
+		}
+	}
+
+	option = {
+		name = rip_disease.9.b
+		custom_tooltip = quarantine_tt
+		scope:disease_province = {
+			add_province_modifier = {
+				name = disease_8_pmod # TODO
+				duration = 365 # 1 year
+			}
+			add_province_modifier = {
+				name = quarantine_pmod # TODO
+				duration = 365 # 1 year
+			}
+			random_pops_in_province = {
+				kill_pop = yes
+			}
+		}
+	}
+}
+
+rip_disease.10 = { # Disease Appearing - Influenza - Flu
+	type = country_event
+	title = rip_disease.10.t
+	desc = rip_disease.10.desc
+	picture = senator_conversing # maybe make custom pic?
+	left_portrait = current_ruler
+
+	goto_location = scope:disease_province
+
+	option = {
+		name = rip_disease.10.a
+		custom_tooltip = possible_spread_tt
+		scope:disease_province = {
+			add_province_modifier = {
+				name = disease_9_pmod # TODO
+				duration = 365 # 1 year
+			}
+			random_pops_in_province = {
+				kill_pop = yes
+			}
+		}
+	}
+	option = {
+		name = rip_disease.10.b
+		custom_tooltip = quarantine_tt
+		scope:disease_province = {
+			add_province_modifier = {
+				name = disease_9_pmod # TODO
+				duration = 365 # 1 year
+			}
+			add_province_modifier = {
+				name = quarantine_pmod # TODO
+				duration = 365 # 1 year
+			}
+			random_pops_in_province = {
+				kill_pop = yes
+			}
+		}
+	}
+}
+
+rip_disease.11 = { # Disease Appearing - Poliomyelitis - Polio
+	type = country_event
+	title = rip_disease.11.t
+	desc = rip_disease.11.desc
+	picture = senator_conversing # maybe make custom pic?
+	left_portrait = current_ruler
+
+	goto_location = scope:disease_province
+
+	option = {
+		name = rip_disease.11.a
+		scope:disease_province = {
+			add_province_modifier = {
+				name = disease_10_pmod # TODO
+				duration = 365 # 1 year
+			}
+			random_pops_in_province = {
+				kill_pop = yes
+			}
+		}
+	}
+
+	option = {
+		name = rip_disease.11.b
+		custom_tooltip = quarantine_tt
+		scope:disease_province = {
+			add_province_modifier = {
+				name = disease_10_pmod # TODO
+				duration = 365 # 1 year
+			}
+			add_province_modifier = {
+				name = quarantine_pmod # TODO
+				duration = 365 # 1 year
+			}
+			random_pops_in_province = {
+				kill_pop = yes
+			}
+		}
+	}
+}
+
+rip_disease.12 = { # Disease Appearing - Measles
+	type = country_event
+	title = rip_disease.12.t
+	desc = rip_disease.12.desc
+	picture = senator_conversing # maybe make custom pic?
+	left_portrait = current_ruler
+
+	goto_location = scope:disease_province
+
+	option = {
+		name = rip_disease.12.a
+		scope:disease_province = {
+			add_province_modifier = {
+				name = disease_11_pmod # TODO
+				duration = 365 # 1 year
+			}
+			random_pops_in_province = {
+				kill_pop = yes
+			}
+		}
+	}
+
+	option = {
+		name = rip_disease.12.b
+		custom_tooltip = quarantine_tt
+		scope:disease_province = {
+			add_province_modifier = {
+				name = disease_11_pmod # TODO
+				duration = 365 # 1 year
+			}
+			add_province_modifier = {
+				name = quarantine_pmod # TODO
+				duration = 365 # 1 year
+			}
+			random_pops_in_province = {
+				kill_pop = yes
+			}
+		}
+	}
+}
+
+rip_disease.13 = { # Disease Appearing - Malaria
+	type = country_event
+	title = rip_disease.13.t
+	desc = rip_disease.13.desc
+	picture = senator_conversing # maybe make custom pic?
+	left_portrait = current_ruler
+
+	goto_location = scope:disease_province
+
+	option = {
+		name = rip_disease.13.a
+		scope:disease_province = {
+			add_province_modifier = {
+				name = disease_12_pmod # TODO
+				duration = 365 # 1 year
+			}
+			random_pops_in_province = {
+				kill_pop = yes
+			}
+		}
+	}
+
+	option = {
+		name = rip_disease.13.b
+		custom_tooltip = quarantine_tt
+		scope:disease_province = {
+			add_province_modifier = {
+				name = disease_12_pmod # TODO
+				duration = 365 # 1 year
+			}
+			add_province_modifier = {
+				name = quarantine_pmod # TODO
+				duration = 365 # 1 year
+			}
+			random_pops_in_province = {
+				kill_pop = yes
+			}
+		}
+	}
+}
+
+rip_disease.14 = { # Disease Appearing - Dysentery
+	type = country_event
+	title = rip_disease.14.t
+	desc = rip_disease.14.desc
+	picture = senator_conversing # maybe make custom pic?
+	left_portrait = current_ruler
+
+	goto_location = scope:disease_province
+
+	option = {
+		name = rip_disease.14.a
+		scope:disease_province = {
+			add_province_modifier = {
+				name = disease_13_pmod # TODO
+				duration = 365 # 1 year
+			}
+			random_pops_in_province = {
+				kill_pop = yes
+			}
+		}
+	}
+
+	option = {
+		name = rip_disease.14.b
+		custom_tooltip = quarantine_tt
+		scope:disease_province = {
+			add_province_modifier = {
+				name = disease_13_pmod # TODO
+				duration = 365 # 1 year
+			}
+			add_province_modifier = {
+				name = quarantine_pmod # TODO
+				duration = 365 # 1 year
+			}
+			random_pops_in_province = {
+				kill_pop = yes
+			}
+		}
+	}
+}
+
+rip_disease.15 = { # Disease Appearing - Mentagra
+	type = country_event
+	title = rip_disease.15.t
+	desc = rip_disease.15.desc
+	picture = senator_conversing # maybe make custom pic?
+	left_portrait = current_ruler
+
+	goto_location = scope:disease_province
+
+	option = {
+		name = rip_disease.15.a
+		scope:disease_province = {
+			add_province_modifier = {
+				name = disease_14_pmod # TODO
+				duration = 365 # 1 year
+			}
+			random_pops_in_province = {
+				kill_pop = yes
+			}
+		}
+	}
+
+	option = {
+		name = rip_disease.15.b
+		custom_tooltip = quarantine_tt
+		scope:disease_province = {
+			add_province_modifier = {
+				name = disease_14_pmod # TODO
+				duration = 365 # 1 year
+			}
+			add_province_modifier = {
+				name = quarantine_pmod # TODO
+				duration = 365 # 1 year
+			}
+			random_pops_in_province = {
+				kill_pop = yes
+			}
+		}
+	}
+}
+
+rip_disease.16 = { # Disease Appearing - Common Cold
+	type = country_event
+	title = rip_disease.16.t
+	desc = rip_disease.16.desc
+	picture = senator_conversing # maybe make custom pic?
+	left_portrait = current_ruler
+
+	goto_location = scope:disease_province
+
+	option = {
+		name = rip_disease.16.a
+		scope:disease_province = {
+			add_province_modifier = {
+				name = disease_15_pmod # TODO
+				duration = 365 # 1 year
+			}
+			random_pops_in_province = {
+				kill_pop = yes
+			}
+		}
+	}
+
+	option = {
+		name = rip_disease.16.b
+		custom_tooltip = quarantine_tt
+		scope:disease_province = {
+			add_province_modifier = {
+				name = disease_15_pmod # TODO
+				duration = 365 # 1 year
+			}
+			add_province_modifier = {
+				name = quarantine_pmod # TODO
+				duration = 365 # 1 year
+			}
+			random_pops_in_province = {
+				kill_pop = yes
+			}
+		}
+	}
+}
+
+rip_disease.17 = { # Trachoma
+	type = country_event
+	title = rip_disease.17.t
+	desc = rip_disease.17.desc
+	picture = senator_conversing # maybe make custom pic?
+	left_portrait = current_ruler
+
+	goto_location = scope:disease_province
+
+	option = {
+		name = rip_disease.17.a
+		scope:disease_province = {
+			add_province_modifier = {
+				name = disease_16_pmod # TODO
+				duration = 365 # 1 year
+			}
+			random_pops_in_province = {
+				kill_pop = yes
+			}
+		}
+	}
+
+	option = {
+		name = rip_disease.17.b
+		custom_tooltip = quarantine_tt
+		scope:disease_province = {
+			add_province_modifier = {
+				name = disease_16_pmod # TODO
+				duration = 365 # 1 year
+			}
+			add_province_modifier = {
+				name = quarantine_pmod # TODO
+				duration = 365 # 1 year
+			}
+			random_pops_in_province = {
+				kill_pop = yes
+			}
+		}
+	}
+}
+
+rip_disease.100 = { # disease spread
+	type = country_event
+	hidden = yes
+
+	trigger = {
+		OR = {
+			any_owned_province = {
+				has_province_disease_trigger = yes
+			}
+			any_unit = {
+				has_unit_disease_trigger = yes
+				unit_location = {
+					NOT = {
+						has_province_disease_trigger = yes
+					}
+				}
+			}
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				any_owned_province = {
+					has_province_disease_trigger = yes
+				}
+			}
+			random_owned_province = {
+				limit = {
+					has_province_disease_trigger = yes
+				}
+				save_scope_as = disease_province
+			}
+			if = {
+				limit = {
+					scope:disease_province = {
+						is_highly_contagious_trigger = yes
+					}
+				}
+				every_province = { # Can spread over borders!
+					limit = {
+						any_neighbor_province = {
+							this = scope:disease_province
+						}
+					}
+					if = {
+						limit = {
+							scope:disease_province = {
+								has_province_modifier = quarantine_pmod
+							}
+						}
+						random = {
+							chance = 25
+							disease_spread_effect = yes
+						}
+					}
+					else = {
+						disease_spread_effect = yes
+					}
+				}
+			}
+			else = {
+				random_province = { # Can spread over borders!
+					limit = {
+						any_neighbor_province = {
+							this = scope:disease_province
+						}
+					}
+					if = {
+						limit = {
+							scope:disease_province = {
+								has_province_modifier = quarantine_pmod
+							}
+						}
+						random = {
+							chance = 10
+							disease_spread_effect = yes
+						}
+					}
+					else = {
+						random = {
+							chance = 80
+							disease_spread_effect = yes
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_unit = {
+					unit_location = {
+						has_province_disease_trigger = yes
+					}
+				}
+			}
+			random_unit = {
+				limit = {
+					unit_location = {
+						has_province_disease_trigger = yes
+					}
+				}
+				unit_disease_effect = yes
+			}
+		}
+		if = {
+			limit = {
+				any_unit = {
+					has_unit_disease_trigger = yes
+					unit_location = {
+						NOT = {
+							has_province_disease_trigger = yes
+						}
+					}
+				}
+			}
+			random_unit = {
+				limit = {
+					has_unit_disease_trigger = yes
+					unit_location = {
+						NOT = {
+							has_province_disease_trigger = yes
+						}
+					}
+				}
+				random = {
+					chance = 50
+					unit_to_territory_disease_effect = yes # scoping to unit_location in the effect
+				}
+			}
+		}
+	}
+}
+
+rip_disease.200 = {
+	type = country_event
+	hidden = yes
+
+	trigger = {
+		OR = {
+			any_owned_province = {
+				has_province_disease_trigger = yes
+			}
+			any_unit = {
+				has_unit_disease_trigger = yes
+			}
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				any_owned_province = {
+					has_province_disease_trigger = yes
+				}
+			}
+			every_owned_province = {
+				limit = {
+					has_province_disease_trigger = yes
+				}
+				disease_pop_death_effect = yes
+			}
+		}
+		if = {
+			limit = {
+				any_unit = {
+					has_unit_disease_trigger = yes
+				}
+			}
+			every_unit = {
+				limit = {
+					has_unit_disease_trigger = yes
+				}
+				every_sub_unit = {
+					disease_unit_damage_effect = yes
+				}
+			}
+		}
+	}
+}

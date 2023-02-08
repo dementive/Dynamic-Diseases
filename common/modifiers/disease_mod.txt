@@ -1,0 +1,143 @@
+﻿# Territory
+
+quarantine_pmod = {
+  local_migration_attraction = -10
+  local_population_happiness = -0.1
+}
+
+disease_1_pmod = { # Plague
+  local_population_growth = -0.25
+}
+
+disease_2_pmod = { # Anthrax
+  local_population_growth = -0.25
+}
+
+disease_3_pmod = { # Tularemia
+  local_population_growth = -0.25
+}
+
+disease_4_pmod = { #Typhus - No distinction with typhoid fever at this time
+  local_population_growth = -0.25
+}
+
+disease_5_pmod = { # Cholera
+  local_population_growth = -0.25
+}
+
+disease_6_pmod = { # Leprosy
+  local_population_growth = -0.25
+  local_output_modifier = -0.2
+}
+
+leper_colony = {
+  local_output_modifier = -0.8
+  local_migration_attraction = -10
+}
+
+disease_7_pmod = { # Smallpox
+  local_population_growth = -0.25
+}
+
+disease_8_pmod = { # Tuberculosis
+  local_population_growth = -0.25
+}
+
+disease_9_pmod = { # Influenza - Flu
+  local_population_growth = -0.25
+}
+
+disease_10_pmod = { # Poliomyelitis - Polio
+  local_population_growth = -0.25
+}
+
+disease_11_pmod = { # Measles
+  local_population_growth = -0.25
+}
+
+disease_12_pmod = { # Malaria
+  local_population_growth = -0.25
+}
+
+disease_13_pmod = { # Dysentery
+  local_population_growth = -0.25
+}
+
+disease_14_pmod = { # Mentagra
+  local_migration_attraction = -3
+}
+
+disease_15_pmod = { # Cold Fever - Common Cold
+  local_population_growth = -0.25
+}
+
+disease_16_pmod = { # Trachoma
+  local_population_growth = -0.25
+}
+
+# Unit
+
+disease_1_unit_mod = {
+  land_morale_modifier = -0.1
+}
+
+disease_2_unit_mod = {
+  land_morale_modifier = -0.1
+}
+
+disease_3_unit_mod = {
+  land_morale_modifier = -0.1
+}
+
+disease_4_unit_mod = {
+  land_morale_modifier = -0.1
+}
+
+disease_5_unit_mod = {
+  land_morale_modifier = -0.1
+}
+
+disease_6_unit_mod = {
+  land_morale_modifier = -0.1
+}
+
+disease_7_unit_mod = {
+  land_morale_modifier = -0.1
+}
+
+disease_8_unit_mod = {
+  land_morale_modifier = -0.1
+}
+
+disease_9_unit_mod = {
+  land_morale_modifier = -0.1
+}
+
+disease_10_unit_mod = {
+  land_morale_modifier = -0.1
+}
+
+disease_11_unit_mod = {
+  land_morale_modifier = -0.1
+}
+
+disease_12_unit_mod = {
+  land_morale_modifier = -0.1
+}
+
+disease_13_unit_mod = {
+  land_morale_modifier = -0.1
+}
+
+disease_14_unit_mod = {
+  land_morale_modifier = -0.1
+}
+
+disease_15_unit_mod = {
+  land_morale_modifier = -0.1
+}
+
+disease_16_unit_mod = {
+  land_morale_modifier = -0.1
+}
+
