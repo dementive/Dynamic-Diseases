@@ -8,9 +8,6 @@
 			}
 			any_neighbor_province = {
 				has_province_modifier = disease_1_pmod
-				NOT = { # try to not make it 100% safe, since we all know that it's not 100% working...
-					has_province_modifier = quarantine_pmod
-				}
 			}
 		}
 		add_province_modifier = {
