@@ -1131,9 +1131,7 @@ rip_disease.200 = {
 				limit = {
 					has_unit_disease_trigger = yes
 				}
-				every_sub_unit = {
-					disease_unit_damage_effect = yes
-				}
+				disease_unit_damage_effect = yes # scope to sub_units in effect
 			}
 		}
 	}

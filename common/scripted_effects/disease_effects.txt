@@ -834,4 +834,149 @@ unit_to_territory_disease_effect = {
 	}
 }
 
-disease_unit_damage_effect = {} #damage_unit_percent; damage_unit_morale_percent
+disease_unit_damage_effect = { 
+	if = {
+		limit = {
+			has_unit_modifier = disease_1_unit_mod
+		}
+		every_sub_unit = {
+			damage_unit_percent = 0.5 # Plague
+			damage_unit_morale_percent = 0.3
+		}
+	}
+	else_if = {
+		limit = {
+			has_unit_modifier = disease_2_unit_mod
+		}
+		every_sub_unit = {
+			damage_unit_percent = 0.5 # Anthrax
+			damage_unit_morale_percent = 0.3
+		}
+	}
+	else_if = {
+		limit = {
+			has_unit_modifier = disease_3_unit_mod
+		}
+		every_sub_unit = {
+			damage_unit_percent = 0.4 # Tularemia
+			damage_unit_morale_percent = 0.3
+		}
+	}
+	else_if = {
+		limit = {
+			has_unit_modifier = disease_4_unit_mod
+		}
+		every_sub_unit = {
+			damage_unit_percent = 0.3 # Typhus
+			damage_unit_morale_percent = 0.3
+		}
+	}
+	else_if = {
+		limit = {
+			has_unit_modifier = disease_5_unit_mod
+		}
+		every_sub_unit = {
+			damage_unit_percent = 0.3 # Cholera
+			damage_unit_morale_percent = 0.15
+		}
+	}
+	else_if = {
+		limit = {
+			has_unit_modifier = disease_6_unit_mod
+		}
+		every_sub_unit = {
+			damage_unit_percent = 0.1 # Leprosy - Slow death
+			damage_unit_morale_percent = 0.9 # effect on morale though...
+		}
+	}
+	else_if = { 
+		limit = {
+			has_unit_modifier = disease_7_unit_mod
+		}
+		every_sub_unit = {
+			damage_unit_percent = 0.25 # Smallpox
+			damage_unit_morale_percent = 0.25
+		}
+	}
+	else_if = {
+		limit = {
+			has_unit_modifier = disease_8_unit_mod
+		}
+		every_sub_unit = {
+			damage_unit_percent = 0.4 # Tuberculosis
+			damage_unit_morale_percent = 0.3
+		}
+	}
+	else_if = {
+		limit = {
+			has_unit_modifier = disease_9_unit_mod
+		}
+		every_sub_unit = {
+			#damage_unit_percent = 0.02 # Influenza - no damage one the constitution of soldiers
+			damage_unit_morale_percent = 0.15
+		}
+	}
+	else_if = {
+		limit = {
+			has_unit_modifier = disease_10_unit_mod
+		}
+		every_sub_unit = {
+			damage_unit_percent = 0.3 # Polio; deadlier for adults
+			damage_unit_morale_percent = 0.5 # not able to move... not good for morale
+		}
+	}
+	else_if = {
+		limit = {
+			has_unit_modifier = disease_11_unit_mod
+		}
+		every_sub_unit = {
+			damage_unit_percent = 0.03 # Measles not so deadly
+			damage_unit_morale_percent = 0.1
+		}
+	}
+	else_if = {
+		limit = {
+			has_unit_modifier = disease_12_unit_mod
+		}
+		every_sub_unit = {
+			damage_unit_percent = 0.05 # Malaria, not so deadly; like measles, commonality biggest reason for high death tolls
+			damage_unit_morale_percent = 0.1
+		}
+	}
+	else_if = {
+		limit = {
+			has_unit_modifier = disease_13_unit_mod
+		}
+		every_sub_unit = {
+			damage_unit_percent = 0.1 # dysentery - higher among soldiers
+			damage_unit_morale_percent = 0.15
+		}
+	}
+	else_if = { # Mentagra
+		limit = {
+			has_unit_modifier = disease_14_unit_mod
+		}
+		every_sub_unit = {
+			#damage_unit_percent = 0.5
+			damage_unit_morale_percent = 0.2 # doesn't do any damage beyond make you ugly in the face
+		}
+	}
+	else_if = { # Cold Fever
+		limit = {
+			has_unit_modifier = disease_15_unit_mod
+		}
+		every_sub_unit = {
+			#damage_unit_percent = 0.5
+			damage_unit_morale_percent = 0.05 # common cold...
+		}
+	}
+	else_if = { #Trachoma
+		limit = {
+			has_unit_modifier = disease_16_unit_mod
+		}
+		every_sub_unit = {
+			#damage_unit_percent = 0.5
+			damage_unit_morale_percent = 0.5 # makes blind, doesn't kill
+		}
+	}
+} 
