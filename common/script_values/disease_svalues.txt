@@ -55,4 +55,10 @@ sanitation_svalue = {
 		}
 		add = 3
 	}
+	if = { # The jungle is full of disease
+		limit = {
+			terrain = jungle
+		}
+		add = -1
+	}
 }

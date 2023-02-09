@@ -310,35 +310,25 @@ rip_disease.2 = { # Disease Appearing - Plague
 	left_portrait = current_ruler
 
 	goto_location = scope:disease_province
-
+	immediate = {
+		random_owned_province = {
+			save_scope_as = disease_province
+		}
+	}
 	option = {
 		name = rip_disease.2.a
 		custom_tooltip = possible_spread_tt
-		scope:disease_province = {
-			add_province_modifier = {
-				name = disease_1_pmod # TODO
-				duration = 365 # 1 year
-			}
-			random_pops_in_province = {
-				kill_pop = yes
-			}
+		disease_in_province_effect = {
+			mod = "disease_1_pmod"
+			disease = "plague"
 		}
 	}
 	option = {
 		name = rip_disease.2.b
 		custom_tooltip = quarantine_tt
-		scope:disease_province = {
-			add_province_modifier = {
-				name = disease_1_pmod # TODO
-				duration = 365 # 1 year
-			}
-			add_province_modifier = {
-				name = quarantine_pmod # TODO
-				duration = 365 # 1 year
-			}
-			random_pops_in_province = {
-				kill_pop = yes
-			}
+		quarantine_province_effect = {
+			mod = "disease_1_pmod"
+			disease = "plague"
 		}
 	}
 }
@@ -354,32 +344,18 @@ rip_disease.3 = { # Disease Appearing - Anthrax - Human to Human non-contagious;
 
 	option = {
 		name = rip_disease.3.a
-		scope:disease_province = {
-			add_province_modifier = {
-				name = disease_2_pmod # TODO
-				duration = 365 # 1 year
-			}
-			random_pops_in_province = {
-				kill_pop = yes
-			}
+		disease_in_province_effect = {
+			mod = "disease_2_pmod"
+			disease = "anthrax"
 		}
 	}
 
 	option = {
 		name = rip_disease.3.b
 		custom_tooltip = quarantine_tt
-		scope:disease_province = {
-			add_province_modifier = {
-				name = disease_2_pmod # TODO
-				duration = 365 # 1 year
-			}
-			add_province_modifier = {
-				name = quarantine_pmod # TODO
-				duration = 365 # 1 year
-			}
-			random_pops_in_province = {
-				kill_pop = yes
-			}
+		quarantine_province_effect = {
+			mod = "disease_2_pmod"
+			disease = "anthrax"
 		}
 	}
 }
@@ -396,31 +372,17 @@ rip_disease.4 = { # Disease Appearing - Tularemia
 	option = {
 		name = rip_disease.4.a
 		custom_tooltip = possible_spread_tt
-		scope:disease_province = {
-			add_province_modifier = {
-				name = disease_3_pmod # TODO
-				duration = 365 # 1 year
-			}
-			random_pops_in_province = {
-				kill_pop = yes
-			}
+		disease_in_province_effect = {
+			mod = "disease_3_pmod"
+			disease = "tularemia"
 		}
 	}
 	option = {
 		name = rip_disease.4.b
 		custom_tooltip = quarantine_tt
-		scope:disease_province = {
-			add_province_modifier = {
-				name = disease_3_pmod # TODO
-				duration = 365 # 1 year
-			}
-			add_province_modifier = {
-				name = quarantine_pmod # TODO
-				duration = 365 # 1 year
-			}
-			random_pops_in_province = {
-				kill_pop = yes
-			}
+		quarantine_province_effect = {
+			mod = "disease_3_pmod"
+			disease = "tularemia"
 		}
 	}
 }
@@ -436,32 +398,18 @@ rip_disease.5 = { # Disease Appearing - Typhus
 
 	option = {
 		name = rip_disease.5.a
-		scope:disease_province = {
-			add_province_modifier = {
-				name = disease_4_pmod # TODO
-				duration = 365 # 1 year
-			}
-			random_pops_in_province = {
-				kill_pop = yes
-			}
+		disease_in_province_effect = {
+			mod = "disease_4_pmod"
+			disease = "typhus"
 		}
 	}
 
 	option = {
 		name = rip_disease.5.b
 		custom_tooltip = quarantine_tt
-		scope:disease_province = {
-			add_province_modifier = {
-				name = disease_4_pmod # TODO
-				duration = 365 # 1 year
-			}
-			add_province_modifier = {
-				name = quarantine_pmod # TODO
-				duration = 365 # 1 year
-			}
-			random_pops_in_province = {
-				kill_pop = yes
-			}
+		quarantine_province_effect = {
+			mod = "disease_4_pmod"
+			disease = "typhus"
 		}
 	}
 }
@@ -477,32 +425,18 @@ rip_disease.6 = { # Disease Appearing - Cholera
 
 	option = {
 		name = rip_disease.6.a
-		scope:disease_province = {
-			add_province_modifier = {
-				name = disease_5_pmod # TODO
-				duration = 365 # 1 year
-			}
-			random_pops_in_province = {
-				kill_pop = yes
-			}
+		disease_in_province_effect = {
+			mod = "disease_5_pmod"
+			disease = "cholera"
 		}
 	}
 
 	option = {
 		name = rip_disease.6.b
 		custom_tooltip = quarantine_tt
-		scope:disease_province = {
-			add_province_modifier = {
-				name = disease_5_pmod # TODO
-				duration = 365 # 1 year
-			}
-			add_province_modifier = {
-				name = quarantine_pmod # TODO
-				duration = 365 # 1 year
-			}
-			random_pops_in_province = {
-				kill_pop = yes
-			}
+		quarantine_province_effect = {
+			mod = "disease_5_pmod"
+			disease = "cholera"
 		}
 	}
 }
@@ -518,32 +452,18 @@ rip_disease.7 = { # Disease Appearing - Leprosy
 
 	option = {
 		name = rip_disease.7.a
-		scope:disease_province = {
-			add_province_modifier = {
-				name = disease_6_pmod # TODO
-				duration = 365 # 1 year
-			}
-			random_pops_in_province = {
-				kill_pop = yes
-			}
+		disease_in_province_effect = {
+			mod = "disease_6_pmod"
+			disease = "leprosy"
 		}
 	}
 
 	option = {
 		name = rip_disease.7.b
 		custom_tooltip = quarantine_tt
-		scope:disease_province = {
-			add_province_modifier = {
-				name = disease_6_pmod # TODO
-				duration = 365 # 1 year
-			}
-			add_province_modifier = {
-				name = quarantine_pmod # TODO
-				duration = 365 # 1 year
-			}
-			random_pops_in_province = {
-				kill_pop = yes
-			}
+		quarantine_province_effect = {
+			mod = "disease_6_pmod"
+			disease = "leprosy"
 		}
 	}
 }
@@ -560,31 +480,17 @@ rip_disease.8 = { # Disease Appearing - Smallpox
 	option = {
 		name = rip_disease.8.a
 		custom_tooltip = possible_spread_tt
-		scope:disease_province = {
-			add_province_modifier = {
-				name = disease_7_pmod # TODO
-				duration = 365 # 1 year
-			}
-			random_pops_in_province = {
-				kill_pop = yes
-			}
+		disease_in_province_effect = {
+			mod = "disease_7_pmod"
+			disease = "smallpox"
 		}
 	}
 	option = {
 		name = rip_disease.8.b
 		custom_tooltip = quarantine_tt
-		scope:disease_province = {
-			add_province_modifier = {
-				name = disease_7_pmod # TODO
-				duration = 365 # 1 year
-			}
-			add_province_modifier = {
-				name = quarantine_pmod # TODO
-				duration = 365 # 1 year
-			}
-			random_pops_in_province = {
-				kill_pop = yes
-			}
+		quarantine_province_effect = {
+			mod = "disease_7_pmod"
+			disease = "smallpox"
 		}
 	}
 }
@@ -600,32 +506,18 @@ rip_disease.9 = { # Disease Appearing - Tuberculosis
 
 	option = {
 		name = rip_disease.9.a
-		scope:disease_province = {
-			add_province_modifier = {
-				name = disease_8_pmod # TODO
-				duration = 365 # 1 year
-			}
-			random_pops_in_province = {
-				kill_pop = yes
-			}
+		disease_in_province_effect = {
+			mod = "disease_8_pmod"
+			disease = "tuberculosis"
 		}
 	}
 
 	option = {
 		name = rip_disease.9.b
 		custom_tooltip = quarantine_tt
-		scope:disease_province = {
-			add_province_modifier = {
-				name = disease_8_pmod # TODO
-				duration = 365 # 1 year
-			}
-			add_province_modifier = {
-				name = quarantine_pmod # TODO
-				duration = 365 # 1 year
-			}
-			random_pops_in_province = {
-				kill_pop = yes
-			}
+		quarantine_province_effect = {
+			mod = "disease_8_pmod"
+			disease = "tuberculosis"
 		}
 	}
 }
@@ -642,31 +534,17 @@ rip_disease.10 = { # Disease Appearing - Influenza - Flu
 	option = {
 		name = rip_disease.10.a
 		custom_tooltip = possible_spread_tt
-		scope:disease_province = {
-			add_province_modifier = {
-				name = disease_9_pmod # TODO
-				duration = 365 # 1 year
-			}
-			random_pops_in_province = {
-				kill_pop = yes
-			}
+		disease_in_province_effect = {
+			mod = "disease_9_pmod"
+			disease = "influenza"
 		}
 	}
 	option = {
 		name = rip_disease.10.b
 		custom_tooltip = quarantine_tt
-		scope:disease_province = {
-			add_province_modifier = {
-				name = disease_9_pmod # TODO
-				duration = 365 # 1 year
-			}
-			add_province_modifier = {
-				name = quarantine_pmod # TODO
-				duration = 365 # 1 year
-			}
-			random_pops_in_province = {
-				kill_pop = yes
-			}
+		quarantine_province_effect = {
+			mod = "disease_9_pmod"
+			disease = "influenza"
 		}
 	}
 }
@@ -682,32 +560,18 @@ rip_disease.11 = { # Disease Appearing - Poliomyelitis - Polio
 
 	option = {
 		name = rip_disease.11.a
-		scope:disease_province = {
-			add_province_modifier = {
-				name = disease_10_pmod # TODO
-				duration = 365 # 1 year
-			}
-			random_pops_in_province = {
-				kill_pop = yes
-			}
+		disease_in_province_effect = {
+			mod = "disease_10_pmod"
+			disease = "polio"
 		}
 	}
 
 	option = {
 		name = rip_disease.11.b
 		custom_tooltip = quarantine_tt
-		scope:disease_province = {
-			add_province_modifier = {
-				name = disease_10_pmod # TODO
-				duration = 365 # 1 year
-			}
-			add_province_modifier = {
-				name = quarantine_pmod # TODO
-				duration = 365 # 1 year
-			}
-			random_pops_in_province = {
-				kill_pop = yes
-			}
+		quarantine_province_effect = {
+			mod = "disease_10_pmod"
+			disease = "polio"
 		}
 	}
 }
@@ -723,32 +587,18 @@ rip_disease.12 = { # Disease Appearing - Measles
 
 	option = {
 		name = rip_disease.12.a
-		scope:disease_province = {
-			add_province_modifier = {
-				name = disease_11_pmod # TODO
-				duration = 365 # 1 year
-			}
-			random_pops_in_province = {
-				kill_pop = yes
-			}
+		disease_in_province_effect = {
+			mod = "disease_11_pmod"
+			disease = "measles"
 		}
 	}
 
 	option = {
 		name = rip_disease.12.b
 		custom_tooltip = quarantine_tt
-		scope:disease_province = {
-			add_province_modifier = {
-				name = disease_11_pmod # TODO
-				duration = 365 # 1 year
-			}
-			add_province_modifier = {
-				name = quarantine_pmod # TODO
-				duration = 365 # 1 year
-			}
-			random_pops_in_province = {
-				kill_pop = yes
-			}
+		quarantine_province_effect = {
+			mod = "disease_11_pmod"
+			disease = "measles"
 		}
 	}
 }
@@ -764,32 +614,18 @@ rip_disease.13 = { # Disease Appearing - Malaria
 
 	option = {
 		name = rip_disease.13.a
-		scope:disease_province = {
-			add_province_modifier = {
-				name = disease_12_pmod # TODO
-				duration = 365 # 1 year
-			}
-			random_pops_in_province = {
-				kill_pop = yes
-			}
+		disease_in_province_effect = {
+			mod = "disease_12_pmod"
+			disease = "malaria"
 		}
 	}
 
 	option = {
 		name = rip_disease.13.b
 		custom_tooltip = quarantine_tt
-		scope:disease_province = {
-			add_province_modifier = {
-				name = disease_12_pmod # TODO
-				duration = 365 # 1 year
-			}
-			add_province_modifier = {
-				name = quarantine_pmod # TODO
-				duration = 365 # 1 year
-			}
-			random_pops_in_province = {
-				kill_pop = yes
-			}
+		quarantine_province_effect = {
+			mod = "disease_12_pmod"
+			disease = "malaria"
 		}
 	}
 }
@@ -805,32 +641,18 @@ rip_disease.14 = { # Disease Appearing - Dysentery
 
 	option = {
 		name = rip_disease.14.a
-		scope:disease_province = {
-			add_province_modifier = {
-				name = disease_13_pmod # TODO
-				duration = 365 # 1 year
-			}
-			random_pops_in_province = {
-				kill_pop = yes
-			}
+		disease_in_province_effect = {
+			mod = "disease_13_pmod"
+			disease = "dysentery"
 		}
 	}
 
 	option = {
 		name = rip_disease.14.b
 		custom_tooltip = quarantine_tt
-		scope:disease_province = {
-			add_province_modifier = {
-				name = disease_13_pmod # TODO
-				duration = 365 # 1 year
-			}
-			add_province_modifier = {
-				name = quarantine_pmod # TODO
-				duration = 365 # 1 year
-			}
-			random_pops_in_province = {
-				kill_pop = yes
-			}
+		quarantine_province_effect = {
+			mod = "disease_13_pmod"
+			disease = "dysentery"
 		}
 	}
 }
@@ -846,32 +668,18 @@ rip_disease.15 = { # Disease Appearing - Mentagra
 
 	option = {
 		name = rip_disease.15.a
-		scope:disease_province = {
-			add_province_modifier = {
-				name = disease_14_pmod # TODO
-				duration = 365 # 1 year
-			}
-			random_pops_in_province = {
-				kill_pop = yes
-			}
+		disease_in_province_effect = {
+			mod = "disease_14_pmod"
+			disease = "mentagra"
 		}
 	}
 
 	option = {
 		name = rip_disease.15.b
 		custom_tooltip = quarantine_tt
-		scope:disease_province = {
-			add_province_modifier = {
-				name = disease_14_pmod # TODO
-				duration = 365 # 1 year
-			}
-			add_province_modifier = {
-				name = quarantine_pmod # TODO
-				duration = 365 # 1 year
-			}
-			random_pops_in_province = {
-				kill_pop = yes
-			}
+		quarantine_province_effect = {
+			mod = "disease_14_pmod"
+			disease = "mentagra"
 		}
 	}
 }
@@ -887,32 +695,18 @@ rip_disease.16 = { # Disease Appearing - Common Cold
 
 	option = {
 		name = rip_disease.16.a
-		scope:disease_province = {
-			add_province_modifier = {
-				name = disease_15_pmod # TODO
-				duration = 365 # 1 year
-			}
-			random_pops_in_province = {
-				kill_pop = yes
-			}
+		disease_in_province_effect = {
+			mod = "disease_15_pmod"
+			disease = "cold"
 		}
 	}
 
 	option = {
 		name = rip_disease.16.b
 		custom_tooltip = quarantine_tt
-		scope:disease_province = {
-			add_province_modifier = {
-				name = disease_15_pmod # TODO
-				duration = 365 # 1 year
-			}
-			add_province_modifier = {
-				name = quarantine_pmod # TODO
-				duration = 365 # 1 year
-			}
-			random_pops_in_province = {
-				kill_pop = yes
-			}
+		quarantine_province_effect = {
+			mod = "disease_15_pmod"
+			disease = "cold"
 		}
 	}
 }
@@ -928,32 +722,18 @@ rip_disease.17 = { # Trachoma
 
 	option = {
 		name = rip_disease.17.a
-		scope:disease_province = {
-			add_province_modifier = {
-				name = disease_16_pmod # TODO
-				duration = 365 # 1 year
-			}
-			random_pops_in_province = {
-				kill_pop = yes
-			}
+		disease_in_province_effect = {
+			mod = "disease_16_pmod"
+			disease = "trachoma"
 		}
 	}
 
 	option = {
 		name = rip_disease.17.b
 		custom_tooltip = quarantine_tt
-		scope:disease_province = {
-			add_province_modifier = {
-				name = disease_16_pmod # TODO
-				duration = 365 # 1 year
-			}
-			add_province_modifier = {
-				name = quarantine_pmod # TODO
-				duration = 365 # 1 year
-			}
-			random_pops_in_province = {
-				kill_pop = yes
-			}
+		quarantine_province_effect = {
+			mod = "disease_16_pmod"
+			disease = "trachoma"
 		}
 	}
 }
@@ -1010,12 +790,15 @@ rip_disease.100 = { # disease spread
 							}
 						}
 						random = {
-							chance = 25
+							chance = { 15 25 }
 							disease_spread_effect = yes
 						}
 					}
 					else = {
-						disease_spread_effect = yes
+						random = {
+							chance = { 60 80 }
+							disease_spread_effect = yes
+						}
 					}
 				}
 			}
@@ -1033,13 +816,13 @@ rip_disease.100 = { # disease spread
 							}
 						}
 						random = {
-							chance = 10
+							chance = { 5 10 }
 							disease_spread_effect = yes
 						}
 					}
 					else = {
 						random = {
-							chance = 80
+							chance = { 40 70 }
 							disease_spread_effect = yes
 						}
 					}
@@ -1060,7 +843,10 @@ rip_disease.100 = { # disease spread
 						has_province_disease_trigger = yes
 					}
 				}
-				unit_disease_effect = yes
+				random = {
+					chance = { 25 50 }
+					unit_disease_effect = yes
+				}
 			}
 		}
 		if = {
@@ -1084,7 +870,7 @@ rip_disease.100 = { # disease spread
 					}
 				}
 				random = {
-					chance = 50
+					chance = { 25 50 }
 					unit_to_territory_disease_effect = yes # scoping to unit_location in the effect
 				}
 			}
