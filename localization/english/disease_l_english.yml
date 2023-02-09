@@ -77,6 +77,25 @@ disease_15_unit_mod_desc:0 ""
 disease_16_unit_mod:0 "Trachoma"
 disease_16_unit_mod_desc:0 ""
 
+# Traits
+anthrax_trait:0 "Anthrax"
+anthrax_trait_desc:0 ""
+tularemia_trait:0 "Tularemia"
+tularemia_trait_desc:0 ""
+typhus_trait:0 "Typhus"
+typhus_trait_desc:0 ""
+cholera_trait:0 "Cholera"
+cholera_trait_desc:0 ""
+tuberculosis_trait:0 "Tuberculosis"
+influenza_trait:0 "Influenza"
+influenza_trait_desc:0 ""
+poliomyelitis_trait:0 "Polio" # full name: Poliomyelitis
+poliomyelitis_trait_desc:0 ""
+measles_trait:0 "Measles"
+measles_trait_desc:0 "" # rare pre-AD
+malaria_trait:0 "Malaria"
+malaria_trait_desc:0 ""
+
 
 # Events
 rip_disease.2.t:0 ""
