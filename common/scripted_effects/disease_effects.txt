@@ -565,7 +565,7 @@ disease_pop_death_effect = { # Plague
 	###########
 	break = yes
 	###########
-	else_if = { # Mentagra - Not deadly
+	if = { # Mentagra - Not deadly
 	 	limit = {
 	 		has_province_modifier = disease_14_pmod
 	 	}
@@ -583,7 +583,7 @@ disease_pop_death_effect = { # Plague
 	 		}
 	 	}
 	}
-	else_if = { # Common Cold
+	if = { # Common Cold
 	 	limit = {
 	 		has_province_modifier = disease_15_pmod
 	 	}
@@ -601,7 +601,7 @@ disease_pop_death_effect = { # Plague
 	 		}
 	 	}
 	}
-	else_if = { # Trachoma
+	if = { # Trachoma
 	 	limit = {
 	 		has_province_modifier = disease_16_pmod
 	 	}
