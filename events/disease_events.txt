@@ -263,7 +263,7 @@ rip_disease.1 = { # Disease Start
 						days = 3650 # 10 years
 					}
 					trigger_event = {
-						id = rip_disease.14
+						id = rip_disease.15
 					}
 				}
 				20 = { # Cold Fever - Common Cold
@@ -277,7 +277,7 @@ rip_disease.1 = { # Disease Start
 						days = 3650 # 10 years
 					}
 					trigger_event = {
-						id = rip_disease.15
+						id = rip_disease.16
 					}
 				}
 				15 = { # Trachoma
@@ -291,7 +291,21 @@ rip_disease.1 = { # Disease Start
 						days = 3650 # 10 years
 					}
 					trigger_event = {
-						id = rip_disease.16
+						id = rip_disease.17
+					}
+				}
+				5 = { # Diphteria # realtively rare before 1700
+					trigger = {
+						NOT = {
+							has_global_variable = diphteria_happening
+						}
+					}
+					set_global_variable = {
+						name = diphteria_happening
+						days = 3650 # 10 years
+					}
+					trigger_event = {
+						id = rip_disease.18
 					}
 				}
 				# 360 = { # nothing happening - I forgot I trigger this in random_events lol with a low chance. A disease should always trigger
@@ -738,6 +752,88 @@ rip_disease.17 = { # Trachoma
 	}
 }
 
+rip_disease.18 = { # Diphteria
+	type = country_event
+	title = rip_disease.18.t
+	desc = rip_disease.18.desc
+	picture = senator_conversing # maybe make custom pic?
+	left_portrait = current_ruler
+
+	goto_location = scope:disease_province
+
+	option = {
+		name = rip_disease.18.a
+		disease_in_province_effect = {
+			mod = "disease_17_pmod"
+			disease = "diphteria"
+		}
+	}
+
+	option = {
+		name = rip_disease.18.b
+		custom_tooltip = quarantine_tt
+		quarantine_province_effect = {
+			mod = "disease_17_pmod"
+			disease = "diphteria"
+		}
+	}
+}
+
+rip_disease.30 = { # chars getting disease
+	type = country_event
+	title = rip_disease.30.t
+	desc = rip_disease.30.desc
+	picture = senator_conversing
+	left_portrait = current_ruler
+	right_portrait = scope:disease_char_target
+
+	trigger = {
+		any_governorships = {
+			capital_scope = {
+				has_province_disease_trigger = yes
+			}
+		}
+	}
+	immediate = {
+		random_governorships = {
+			disease_to_characters_effect = yes # chance in on_action
+			governor_or_ruler = {
+				save_scope_as = disease_char_target
+			}
+		}
+	}
+
+	option = {
+		name = rip_disease.30.a
+	}
+}
+
+rip_disease.35 = { # units getting disease ping
+	type = country_event
+	title = rip_disease.35.t
+	desc = rip_disease.35.desc
+	picture = senator_conversing
+	left_portrait = current_ruler
+
+	option = {
+		name = rip_disease.35.a
+	}
+}
+
+rip_disease.50 = { # polio becomes paralysis
+	type = character_event
+	title = rip_disease.50.t
+	desc = rip_disease.50.desc
+	picture = senator_conversing
+	left_portrait = current_ruler
+
+	option = {
+		name = rip_disease.50.a
+		remove_trait = poliomyelitis_trait
+		add_trait = paralysis
+	}
+}
+
 rip_disease.100 = { # disease spread
 	type = country_event
 	hidden = yes
@@ -846,6 +942,11 @@ rip_disease.100 = { # disease spread
 				random = {
 					chance = { 25 50 }
 					unit_disease_effect = yes
+					root = {
+						trigger_event = {
+							id = rip_disease.35
+						}
+					}
 				}
 			}
 		}

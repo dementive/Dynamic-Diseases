@@ -23,10 +23,14 @@ disease_pulse = {
         5000 = 0
         10 = rip_disease.1 # Disease start; hidden event; will chose what disease to spawn based of a random list
         # use this mostly to regulate how often it happens in the first place; consider that it will trigger for everyone.
+        10 = rip_disease.30 # chars getting it from province
     }
 
     events = {
         rip_disease.100 # disease spread
         rip_disease.200 # disease pop death and unit damages
     }
+
+    ### We probably need an update event from time to time; every 20 provinces infected? maybe too common?
+    ### Also event that removes most disease traits; alternatively add traits to vanilla triggers, effects and events regarding char disease
 }

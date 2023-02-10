@@ -75,6 +75,10 @@ disease_16_pmod = { # Trachoma
   local_population_growth = -0.25
 }
 
+disease_17_pmod = { # Diphtheria - misstyped as "Diphteria" in most places
+  local_population_growth = -0.25
+}
+
 # Unit
 
 disease_1_unit_mod = {
@@ -138,6 +142,10 @@ disease_15_unit_mod = {
 }
 
 disease_16_unit_mod = {
+  land_morale_modifier = -0.1
+}
+
+disease_17_unit_mod = {
   land_morale_modifier = -0.1
 }
 

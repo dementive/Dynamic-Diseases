@@ -17,6 +17,7 @@
 		has_province_modifier = disease_14_pmod # Mentagra
 		has_province_modifier = disease_15_pmod # Cold Fever - Common Cold
 		has_province_modifier = disease_16_pmod # Trachoma
+		has_province_modifier = disease_17_pmod # Diphteria
 	}
 }
 
@@ -38,6 +39,7 @@ is_highly_contagious_trigger = { # spread easily; the spread event will have the
 		#has_province_modifier = disease_14_pmod # Mentagra
 		has_province_modifier = disease_15_pmod # Cold Fever - Common Cold
 		has_province_modifier = disease_16_pmod # Trachoma
+		has_province_modifier = disease_17_pmod # Diphteria
 	}
 	# trigger_if = {
 	# 	limit = {
@@ -67,6 +69,7 @@ has_unit_disease_trigger = {
 		has_unit_modifier = disease_13_unit_mod # Dysentery
 		has_unit_modifier = disease_14_unit_mod # Mentagra
 		has_unit_modifier = disease_15_unit_mod # Cold Fever - Common Cold
-		has_unit_modifier = disease_16_mod # Trachoma
+		has_unit_modifier = disease_16_unit_mod # Trachoma
+		has_unit_modifier = disease_17_unit_mod # Diphteria
 	}
 }

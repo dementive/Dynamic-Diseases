@@ -52,7 +52,7 @@ quarantine_province_effect = {
 				set_variable = {
 					name = $disease$_var
 					value = 1
-					duration = 365
+					days = 365
 				}
 			}
 		}
@@ -289,6 +289,20 @@ disease_spread_effect = {
 			duration = 365 # 1 year
 		}
 	}
+	else_if = {
+		limit = {
+			owner = {
+				has_global_variable = diphteria_happening
+			}
+			any_neighbor_province = {
+				has_province_modifier = disease_17_pmod
+			}
+		}
+		add_province_modifier = {
+			name = disease_17_pmod
+			duration = 365 # 1 year
+		}
+	}
 }
 
 pop_death_variable_check = {
@@ -313,7 +327,7 @@ pop_death_variable_check = {
 			set_variable = {
 				name = $disease$_var
 				value = 1
-				duration = 365
+				days = 365
 			}
 		}
 		if = {
@@ -557,6 +571,24 @@ disease_pop_death_effect = { # Plague
 			pop_death_variable_check = {
 				disease = "dysentery"
 				threshold = "8"
+			}
+		}
+	}
+	else_if = { # Dysentery
+		limit = {
+			has_province_modifier = disease_17_pmod
+		}
+		ordered_pops_in_province = {
+			order_by = pop_hapiness
+			max = {
+				value = total_population
+				multiply = 0.1 # 5-10%; higher if less than 5 or more than 40 yrs old
+				round = floor
+			}
+			check_range_bounds = no
+			pop_death_variable_check = {
+				disease = "diphteria"
+				threshold = "6"
 			}
 		}
 	}
@@ -926,6 +958,25 @@ unit_disease_effect = { # unit scope
 			}
 		}
 	}
+	else_if = {
+		limit = {
+			unit_location = {
+				has_province_modifier = disease_17_pmod
+			}
+		}
+		add_unit_modifier = {
+			name = disease_17_unit_mod
+			duration = 365 
+		}
+		unit_location = {
+			random_pops_in_province = {
+				pop_death_variable_check = {
+					disease = "diphteria"
+					threshold = "6"
+				}
+			}
+		}
+	}
 }
 
 unit_to_territory_disease_effect = {
@@ -1105,6 +1156,17 @@ unit_to_territory_disease_effect = {
 			}
 		}
 	}
+	else_if = {
+		limit = {
+			has_unit_modifier = disease_17_unit_mod
+		}
+		unit_location = {
+			add_province_modifier = {
+				name = disease_17_pmod
+				duration = 365
+			}
+		}
+	}
 }
 
 disease_unit_damage_effect = { 
@@ -1112,144 +1174,296 @@ disease_unit_damage_effect = {
 		limit = {
 			has_unit_modifier = disease_1_unit_mod
 		}
-		every_sub_unit = {
-			damage_unit_percent = 0.5 # Plague
-			damage_unit_morale_percent = 0.3
-		}
+		damage_unit_percent = 0.5 # Plague
+		damage_unit_morale_percent = 0.3
 	}
 	else_if = {
 		limit = {
 			has_unit_modifier = disease_2_unit_mod
 		}
-		every_sub_unit = {
-			damage_unit_percent = 0.5 # Anthrax
-			damage_unit_morale_percent = 0.3
-		}
+		damage_unit_percent = 0.5 # Anthrax
+		damage_unit_morale_percent = 0.3
 	}
 	else_if = {
 		limit = {
 			has_unit_modifier = disease_3_unit_mod
 		}
-		every_sub_unit = {
-			damage_unit_percent = 0.4 # Tularemia
-			damage_unit_morale_percent = 0.3
-		}
+		damage_unit_percent = 0.4 # Tularemia
+		damage_unit_morale_percent = 0.3
 	}
 	else_if = {
 		limit = {
 			has_unit_modifier = disease_4_unit_mod
 		}
-		every_sub_unit = {
-			damage_unit_percent = 0.3 # Typhus
-			damage_unit_morale_percent = 0.3
-		}
+		damage_unit_percent = 0.3 # Typhus
+		damage_unit_morale_percent = 0.3
 	}
 	else_if = {
 		limit = {
 			has_unit_modifier = disease_5_unit_mod
 		}
-		every_sub_unit = {
-			damage_unit_percent = 0.3 # Cholera
-			damage_unit_morale_percent = 0.15
-		}
+		damage_unit_percent = 0.3 # Cholera
+		damage_unit_morale_percent = 0.15
 	}
 	else_if = {
 		limit = {
 			has_unit_modifier = disease_6_unit_mod
 		}
-		every_sub_unit = {
-			damage_unit_percent = 0.1 # Leprosy - Slow death
-			damage_unit_morale_percent = 0.9 # effect on morale though...
-		}
+		damage_unit_percent = 0.1 # Leprosy - Slow death
+		damage_unit_morale_percent = 0.9 # effect on morale though...
 	}
 	else_if = { 
 		limit = {
 			has_unit_modifier = disease_7_unit_mod
 		}
-		every_sub_unit = {
-			damage_unit_percent = 0.25 # Smallpox
-			damage_unit_morale_percent = 0.25
-		}
+		damage_unit_percent = 0.25 # Smallpox
+		damage_unit_morale_percent = 0.25
 	}
 	else_if = {
 		limit = {
 			has_unit_modifier = disease_8_unit_mod
 		}
-		every_sub_unit = {
-			damage_unit_percent = 0.4 # Tuberculosis
-			damage_unit_morale_percent = 0.3
-		}
+		damage_unit_percent = 0.4 # Tuberculosis
+		damage_unit_morale_percent = 0.3
 	}
 	else_if = {
 		limit = {
 			has_unit_modifier = disease_9_unit_mod
 		}
-		every_sub_unit = {
-			#damage_unit_percent = 0.02 # Influenza - no damage one the constitution of soldiers
-			damage_unit_morale_percent = 0.15
-		}
+		#damage_unit_percent = 0.02 # Influenza - no damage one the constitution of soldiers
+		damage_unit_morale_percent = 0.15
 	}
 	else_if = {
 		limit = {
 			has_unit_modifier = disease_10_unit_mod
 		}
-		every_sub_unit = {
-			damage_unit_percent = 0.3 # Polio; deadlier for adults
-			damage_unit_morale_percent = 0.5 # not able to move... not good for morale
-		}
+		damage_unit_percent = 0.3 # Polio; deadlier for adults
+		damage_unit_morale_percent = 0.5 # not able to move... not good for morale
 	}
 	else_if = {
 		limit = {
 			has_unit_modifier = disease_11_unit_mod
 		}
-		every_sub_unit = {
-			damage_unit_percent = 0.03 # Measles not so deadly
-			damage_unit_morale_percent = 0.1
-		}
+		damage_unit_percent = 0.03 # Measles not so deadly
+		damage_unit_morale_percent = 0.1
 	}
 	else_if = {
 		limit = {
 			has_unit_modifier = disease_12_unit_mod
 		}
-		every_sub_unit = {
-			damage_unit_percent = 0.05 # Malaria, not so deadly; like measles, commonality biggest reason for high death tolls
-			damage_unit_morale_percent = 0.1
-		}
+		damage_unit_percent = 0.05 # Malaria, not so deadly; like measles, commonality biggest reason for high death tolls
+		damage_unit_morale_percent = 0.1
 	}
 	else_if = {
 		limit = {
 			has_unit_modifier = disease_13_unit_mod
 		}
-		every_sub_unit = {
-			damage_unit_percent = 0.1 # dysentery - higher among soldiers
-			damage_unit_morale_percent = 0.15
-		}
+		damage_unit_percent = 0.1 # dysentery - higher among soldiers
+		damage_unit_morale_percent = 0.15
 	}
 	else_if = { # Mentagra
 		limit = {
 			has_unit_modifier = disease_14_unit_mod
 		}
-		every_sub_unit = {
-			#damage_unit_percent = 0.5
-			damage_unit_morale_percent = 0.2 # doesn't do any damage beyond make you ugly in the face
-		}
+		#damage_unit_percent = 0.5
+		damage_unit_morale_percent = 0.2 # doesn't do any damage beyond make you ugly in the face
 	}
 	else_if = { # Cold Fever
 		limit = {
 			has_unit_modifier = disease_15_unit_mod
 		}
-		every_sub_unit = {
-			#damage_unit_percent = 0.5
-			damage_unit_morale_percent = 0.05 # common cold...
-		}
+		#damage_unit_percent = 0.5
+		damage_unit_morale_percent = 0.05 # common cold...
 	}
 	else_if = { #Trachoma
 		limit = {
 			has_unit_modifier = disease_16_unit_mod
 		}
-		every_sub_unit = {
-			#damage_unit_percent = 0.5
-			damage_unit_morale_percent = 0.5 # makes blind, doesn't kill
+		#damage_unit_percent = 0.5
+		damage_unit_morale_percent = 0.5 # makes blind, doesn't kill
+	}
+	else_if = { #Diphteria
+		limit = {
+			has_unit_modifier = disease_17_unit_mod
 		}
+		damage_unit_percent = 0.1
+		damage_unit_morale_percent = 0.15 # 
 	}
 } 
+
+disease_to_characters_effect = { # governorship scope
+	if = {
+		limit = {
+			capital_scope = {
+				has_province_modifier = disease_1_pmod
+			}
+		}
+		governor_or_ruler = {
+			add_trait = plague
+		}
+	}
+	else_if = {
+		limit = {
+			capital_scope = {
+				has_province_modifier = disease_2_pmod
+			}
+		}
+		governor_or_ruler = {
+			add_trait = anthrax_trait
+		}
+	}
+	else_if = {
+		limit = {
+			capital_scope = {
+				has_province_modifier = disease_3_pmod
+			}
+		}
+		governor_or_ruler = {
+			add_trait = tularemia_trait
+		}
+	}
+	else_if = {
+		limit = {
+			capital_scope = {
+				has_province_modifier = disease_4_pmod
+			}
+		}
+		governor_or_ruler = {
+			add_trait = typhus_trait
+		}
+	}
+	else_if = {
+		limit = {
+			capital_scope = {
+				has_province_modifier = disease_5_pmod
+			}
+		}
+		governor_or_ruler = {
+			add_trait = cholera_trait
+		}
+	}
+	else_if = {
+		limit = {
+			capital_scope = {
+				has_province_modifier = disease_6_pmod
+			}
+		}
+		governor_or_ruler = {
+			add_trait = leper
+		}
+	}
+	else_if = {
+		limit = {
+			capital_scope = {
+				has_province_modifier = disease_7_pmod
+			}
+		}
+		governor_or_ruler = {
+			add_trait = pox
+		}
+	}
+	else_if = {
+		limit = {
+			capital_scope = {
+				has_province_modifier = disease_8_pmod
+			}
+		}
+		governor_or_ruler = {
+			add_trait = tuberculosis_trait
+		}
+	}
+	else_if = {
+		limit = {
+			capital_scope = {
+				has_province_modifier = disease_9_pmod
+			}
+		}
+		governor_or_ruler = {
+			add_trait = influenza_trait
+		}
+	}
+	else_if = {
+		limit = {
+			capital_scope = {
+				has_province_modifier = disease_10_pmod
+			}
+		}
+		governor_or_ruler = {
+			add_trait = poliomyelitis_trait	
+			trigger_event = { # char event
+				id = rip_disease.50 # this will remove the polio trait and add paralysis if the trait doesn't get removed before (trigger of the event)
+				days = { 60 200 }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			capital_scope = {
+				has_province_modifier = disease_11_pmod
+			}
+		}
+		governor_or_ruler = {
+			add_trait = measles_trait
+		}
+	}
+	else_if = {
+		limit = {
+			capital_scope = {
+				has_province_modifier = disease_12_pmod
+			}
+		}
+		governor_or_ruler = {
+			add_trait = malaria_trait
+		}
+	}
+	else_if = {
+		limit = {
+			capital_scope = {
+				has_province_modifier = disease_13_pmod
+			}
+		}
+		governor_or_ruler = {
+			add_trait = dysentery
+		}
+	}
+	else_if = {
+		limit = {
+			capital_scope = {
+				has_province_modifier = disease_14_pmod
+			}
+		}
+		governor_or_ruler = {
+			add_trait = mentagra
+		}
+	}
+	else_if = {
+		limit = {
+			capital_scope = {
+				has_province_modifier = disease_15_pmod
+			}
+		}
+		governor_or_ruler = {
+			add_trait = infection
+		}
+	}
+	else_if = {
+		limit = {
+			capital_scope = {
+				has_province_modifier = disease_16_pmod
+			}
+		}
+		governor_or_ruler = {
+			add_trait = blind
+		}
+	}
+	else_if = {
+		limit = {
+			capital_scope = {
+				has_province_modifier = disease_17_pmod
+			}
+		}
+		governor_or_ruler = {
+			add_trait = diphtheria
+		}
+	}
+}

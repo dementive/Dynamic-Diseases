@@ -38,6 +38,8 @@ disease_15_pmod:0 "Cold Fever"
 disease_15_pmod_desc:0 ""
 disease_16_pmod:0 "Trachoma"
 disease_16_pmod_desc:0 ""
+disease_16_pmod:0 "Diphtheria"
+disease_16_pmod_desc:0 ""
 
 quarantine_pmod:0 "Quarantined"
 quarantine_pmod_desc:0 ""
@@ -76,6 +78,8 @@ disease_15_unit_mod:0 "Cold Fever"
 disease_15_unit_mod_desc:0 ""
 disease_16_unit_mod:0 "Trachoma"
 disease_16_unit_mod_desc:0 ""
+disease_16_unit_mod:0 "Diphtheria"
+disease_16_unit_mod_desc:0 ""
 
 # Traits
 anthrax_trait:0 "Anthrax"
@@ -95,7 +99,6 @@ measles_trait:0 "Measles"
 measles_trait_desc:0 "" # rare pre-AD
 malaria_trait:0 "Malaria"
 malaria_trait_desc:0 ""
-
 
 # Events
 rip_disease.2.t:0 ""
@@ -177,4 +180,21 @@ rip_disease.17.t:0 ""
 rip_disease.17.desc:0 ""
 rip_disease.17.a:0 ""
 rip_disease.17.b:0 ""
+
+rip_disease.18.t:0 ""
+rip_disease.18.desc:0 ""
+rip_disease.18.a:0 ""
+rip_disease.18.b:0 ""
+
+rip_disease.30.t:0 "" # chars
+rip_disease.30.desc:0 ""
+rip_disease.30.a:0 ""
+
+rip_disease.35.t:0 "" # units - ping without effects
+rip_disease.35.desc:0 "" # disease_char_target is char scope; can be ruler
+rip_disease.35.a:0 ""
+
+rip_disease.50.t:0 "" # char losing polio but getting paralysis
+rip_disease.50.desc:0 "" # it's a char event, so root is the char
+rip_disease.50.a:0 ""
 
