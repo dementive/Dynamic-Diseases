@@ -813,7 +813,7 @@ rip_disease.35 = { # units getting disease ping
 	title = rip_disease.35.t
 	desc = rip_disease.35.desc
 	picture = senator_conversing
-	left_portrait = current_ruler
+	left_portrait = root
 
 	option = {
 		name = rip_disease.35.a
