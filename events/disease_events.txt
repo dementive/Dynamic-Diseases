@@ -827,6 +827,10 @@ rip_disease.50 = { # polio becomes paralysis
 	picture = senator_conversing
 	left_portrait = current_ruler
 
+	trigger = {
+		has_trait = poliomyelitis_trait
+	}
+
 	option = {
 		name = rip_disease.50.a
 		remove_trait = poliomyelitis_trait
