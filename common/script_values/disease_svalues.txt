@@ -53,11 +53,17 @@ sanitation_svalue = {
 		limit = {
 			terrain = desert
 		}
-		add = 3
+		add = 2
 	}
 	if = { # The jungle is full of disease
 		limit = {
 			terrain = jungle
+		}
+		add = -2
+	}
+	if = { # The jungle is full of disease
+		limit = {
+			terrain = marsh
 		}
 		add = -1
 	}

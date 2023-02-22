@@ -4,7 +4,6 @@
 quarantine_tt:0 "The province will be quarantined and spread of the disease much #G less likely#!."
 possible_spread_tt:0 "The disease is #R likely#! to spread to neighbouring provinces."
 
-sanitation_tt:0 "Add #G 1#! Sanitation to the territory."
 # Modifiers
 disease_1_pmod:0 "Plague"
 disease_1_pmod_desc:0 ""
