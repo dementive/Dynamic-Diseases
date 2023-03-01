@@ -25,10 +25,6 @@ tuberculosis_trait = {
 	type = health # often no real symptoms; sometimes just a cough or weight loss
 	health = -2
 }
-influenza_trait = { 
-	type = health
-	health = -0.05
-}
 poliomyelitis_trait = { 
 	type = health
 	martial = -1 # over time give paralysis and remove this
@@ -46,5 +42,5 @@ malaria_trait = {
 	zeal = 1
 	health = -0.05
 }
-# cold might just be the "infection" trait that exists in vanilla
+# cold might just be the "infection" trait that exists in vanilla - flu as well
 # trachoma will be "blind" trait

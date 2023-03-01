@@ -90,8 +90,6 @@ typhus_trait_desc:0 ""
 cholera_trait:0 "Cholera"
 cholera_trait_desc:0 ""
 tuberculosis_trait:0 "Tuberculosis"
-influenza_trait:0 "Influenza"
-influenza_trait_desc:0 ""
 poliomyelitis_trait:0 "Polio" # full name: Poliomyelitis
 poliomyelitis_trait_desc:0 ""
 measles_trait:0 "Measles"

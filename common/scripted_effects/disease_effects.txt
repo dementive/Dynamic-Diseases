@@ -1379,7 +1379,7 @@ disease_to_characters_effect = { # governorship scope
 			}
 		}
 		governor_or_ruler = {
-			add_trait = influenza_trait
+			add_trait = infection
 		}
 	}
 	else_if = {
