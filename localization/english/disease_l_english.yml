@@ -77,8 +77,8 @@ disease_15_unit_mod:0 "Cold Fever"
 disease_15_unit_mod_desc:0 ""
 disease_16_unit_mod:0 "Trachoma"
 disease_16_unit_mod_desc:0 ""
-disease_16_unit_mod:0 "Diphtheria"
-disease_16_unit_mod_desc:0 ""
+disease_17_unit_mod:0 "Diphtheria"
+disease_17_unit_mod_desc:0 ""
 
 # Traits
 anthrax_trait:0 "Anthrax"
