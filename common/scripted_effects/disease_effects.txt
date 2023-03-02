@@ -664,14 +664,6 @@ unit_disease_effect = { # unit scope
 			name = disease_1_unit_mod
 			duration = 365 
 		}
-		unit_location = {
-			random_pops_in_province = {
-				pop_death_variable_check = {
-					disease = "plague"
-					threshold = "3"
-				}
-			}
-		}
 	}
 	else_if = {
 		limit = {
@@ -682,14 +674,6 @@ unit_disease_effect = { # unit scope
 		add_unit_modifier = {
 			name = disease_2_unit_mod
 			duration = 365 
-		}
-		unit_location = {
-			random_pops_in_province = {
-				pop_death_variable_check = {
-					disease = "anthrax"
-					threshold = "3"
-				}
-			}
 		}
 	}
 	else_if = {
@@ -702,14 +686,6 @@ unit_disease_effect = { # unit scope
 			name = disease_3_unit_mod
 			duration = 365 
 		}
-		unit_location = {
-			random_pops_in_province = {
-				pop_death_variable_check = {
-					disease = "tularemia"
-					threshold = "4"
-				}
-			}
-		}
 	}
 	else_if = {
 		limit = {
@@ -720,14 +696,6 @@ unit_disease_effect = { # unit scope
 		add_unit_modifier = {
 			name = disease_4_unit_mod
 			duration = 365 
-		}
-		unit_location = {
-			random_pops_in_province = {
-				pop_death_variable_check = {
-					disease = "typhus"
-					threshold = "4"
-				}
-			}
 		}
 	}
 	else_if = {
@@ -740,14 +708,6 @@ unit_disease_effect = { # unit scope
 			name = disease_5_unit_mod
 			duration = 365 
 		}
-		unit_location = {
-			random_pops_in_province = {
-				pop_death_variable_check = {
-					disease = "cholera"
-					threshold = "4"
-				}
-			}
-		}
 	}
 	else_if = {
 		limit = {
@@ -758,14 +718,6 @@ unit_disease_effect = { # unit scope
 		add_unit_modifier = {
 			name = disease_6_unit_mod
 			duration = 365 
-		}
-		unit_location = {
-			random_pops_in_province = {
-				pop_death_variable_check = {
-					disease = "leprosy"
-					threshold = "4"
-				}
-			}
 		}
 	}
 	else_if = {
@@ -778,14 +730,6 @@ unit_disease_effect = { # unit scope
 			name = disease_7_unit_mod
 			duration = 365 
 		}
-		unit_location = {
-			random_pops_in_province = {
-				pop_death_variable_check = {
-					disease = "smallpox"
-					threshold = "4"
-				}
-			}
-		}
 	}
 	else_if = {
 		limit = {
@@ -796,14 +740,6 @@ unit_disease_effect = { # unit scope
 		add_unit_modifier = {
 			name = disease_8_unit_mod
 			duration = 365 
-		}
-		unit_location = {
-			random_pops_in_province = {
-				pop_death_variable_check = {
-					disease = "tuberculosis"
-					threshold = "4"
-				}
-			}
 		}
 	}
 	else_if = {
@@ -816,14 +752,6 @@ unit_disease_effect = { # unit scope
 			name = disease_9_unit_mod
 			duration = 365 
 		}
-		unit_location = {
-			random_pops_in_province = {
-				pop_death_variable_check = {
-					disease = "influenza"
-					threshold = "9"
-				}
-			}
-		}
 	}
 	else_if = {
 		limit = {
@@ -834,14 +762,6 @@ unit_disease_effect = { # unit scope
 		add_unit_modifier = {
 			name = disease_10_unit_mod
 			duration = 365 
-		}
-		unit_location = {
-			random_pops_in_province = {
-				pop_death_variable_check = {
-					disease = "polio"
-					threshold = "6"
-				}
-			}
 		}
 	}
 	else_if = {
@@ -854,14 +774,6 @@ unit_disease_effect = { # unit scope
 			name = disease_11_unit_mod
 			duration = 365 
 		}
-		unit_location = {
-			random_pops_in_province = {
-				pop_death_variable_check = {
-					disease = "measles"
-					threshold = "9"
-				}
-			}
-		}
 	}
 	else_if = {
 		limit = {
@@ -872,14 +784,6 @@ unit_disease_effect = { # unit scope
 		add_unit_modifier = {
 			name = disease_12_unit_mod
 			duration = 365 
-		}
-		unit_location = {
-			random_pops_in_province = {
-				pop_death_variable_check = {
-					disease = "malaria"
-					threshold = "8"
-				}
-			}
 		}
 	}
 	else_if = {
@@ -892,14 +796,6 @@ unit_disease_effect = { # unit scope
 			name = disease_13_unit_mod
 			duration = 365 
 		}
-		unit_location = {
-			random_pops_in_province = {
-				pop_death_variable_check = {
-					disease = "dysentery"
-					threshold = "8"
-				}
-			}
-		}
 	}
 	else_if = {
 		limit = {
@@ -910,14 +806,6 @@ unit_disease_effect = { # unit scope
 		add_unit_modifier = {
 			name = disease_14_unit_mod
 			duration = 365 
-		}
-		unit_location = {
-			random_pops_in_province = {
-				pop_death_variable_check = {
-					disease = "mentagra"
-					threshold = "12"
-				}
-			}
 		}
 	}
 	else_if = {
@@ -930,14 +818,6 @@ unit_disease_effect = { # unit scope
 			name = disease_15_unit_mod
 			duration = 365 
 		}
-		unit_location = {
-			random_pops_in_province = {
-				pop_death_variable_check = {
-					disease = "cold"
-					threshold = "12"
-				}
-			}
-		}
 	}
 	else_if = {
 		limit = {
@@ -949,14 +829,6 @@ unit_disease_effect = { # unit scope
 			name = disease_16_unit_mod
 			duration = 365 
 		}
-		unit_location = {
-			random_pops_in_province = {
-				pop_death_variable_check = {
-					disease = "trachoma"
-					threshold = "12"
-				}
-			}
-		}
 	}
 	else_if = {
 		limit = {
@@ -967,14 +839,6 @@ unit_disease_effect = { # unit scope
 		add_unit_modifier = {
 			name = disease_17_unit_mod
 			duration = 365 
-		}
-		unit_location = {
-			random_pops_in_province = {
-				pop_death_variable_check = {
-					disease = "diphteria"
-					threshold = "6"
-				}
-			}
 		}
 	}
 }
@@ -989,6 +853,12 @@ unit_to_territory_disease_effect = {
 				name = disease_1_pmod
 				duration = 365
 			}
+			random_pops_in_province = {
+				pop_death_variable_check = {
+					disease = "plague"
+					threshold = "3"
+				}
+			}
 		}
 	}
 	else_if = {
@@ -999,6 +869,12 @@ unit_to_territory_disease_effect = {
 			add_province_modifier = {
 				name = disease_2_pmod
 				duration = 365
+			}
+			random_pops_in_province = {
+				pop_death_variable_check = {
+					disease = "anthrax"
+					threshold = "3"
+				}
 			}
 		}
 	}
@@ -1011,6 +887,12 @@ unit_to_territory_disease_effect = {
 				name = disease_3_pmod
 				duration = 365
 			}
+			random_pops_in_province = {
+				pop_death_variable_check = {
+					disease = "tularemia"
+					threshold = "4"
+				}
+			}
 		}
 	}
 	else_if = {
@@ -1021,6 +903,12 @@ unit_to_territory_disease_effect = {
 			add_province_modifier = {
 				name = disease_4_pmod
 				duration = 365
+			}
+			random_pops_in_province = {
+				pop_death_variable_check = {
+					disease = "typhus"
+					threshold = "4"
+				}
 			}
 		}
 	}
@@ -1033,6 +921,12 @@ unit_to_territory_disease_effect = {
 				name = disease_5_pmod
 				duration = 365
 			}
+			random_pops_in_province = {
+				pop_death_variable_check = {
+					disease = "cholera"
+					threshold = "4"
+				}
+			}
 		}
 	}
 	else_if = {
@@ -1043,6 +937,12 @@ unit_to_territory_disease_effect = {
 			add_province_modifier = {
 				name = disease_6_pmod
 				duration = 365
+			}
+			random_pops_in_province = {
+				pop_death_variable_check = {
+					disease = "leprosy"
+					threshold = "4"
+				}
 			}
 		}
 	}
@@ -1055,6 +955,12 @@ unit_to_territory_disease_effect = {
 				name = disease_7_pmod
 				duration = 365
 			}
+			random_pops_in_province = {
+				pop_death_variable_check = {
+					disease = "smallpox"
+					threshold = "4"
+				}
+			}
 		}
 	}
 	else_if = {
@@ -1065,6 +971,12 @@ unit_to_territory_disease_effect = {
 			add_province_modifier = {
 				name = disease_8_pmod
 				duration = 365
+			}
+			random_pops_in_province = {
+				pop_death_variable_check = {
+					disease = "tuberculosis"
+					threshold = "4"
+				}
 			}
 		}
 	}
@@ -1077,6 +989,12 @@ unit_to_territory_disease_effect = {
 				name = disease_9_pmod
 				duration = 365
 			}
+			random_pops_in_province = {
+				pop_death_variable_check = {
+					disease = "influenza"
+					threshold = "9"
+				}
+			}
 		}
 	}
 	else_if = {
@@ -1087,6 +1005,12 @@ unit_to_territory_disease_effect = {
 			add_province_modifier = {
 				name = disease_10_pmod
 				duration = 365
+			}
+			random_pops_in_province = {
+				pop_death_variable_check = {
+					disease = "polio"
+					threshold = "6"
+				}
 			}
 		}
 	}
@@ -1099,6 +1023,12 @@ unit_to_territory_disease_effect = {
 				name = disease_11_pmod
 				duration = 365
 			}
+			random_pops_in_province = {
+				pop_death_variable_check = {
+					disease = "measles"
+					threshold = "9"
+				}
+			}
 		}
 	}
 	else_if = {
@@ -1109,6 +1039,12 @@ unit_to_territory_disease_effect = {
 			add_province_modifier = {
 				name = disease_12_pmod
 				duration = 365
+			}
+			random_pops_in_province = {
+				pop_death_variable_check = {
+					disease = "malaria"
+					threshold = "8"
+				}
 			}
 		}
 	}
@@ -1121,6 +1057,12 @@ unit_to_territory_disease_effect = {
 				name = disease_13_pmod
 				duration = 365
 			}
+			random_pops_in_province = {
+				pop_death_variable_check = {
+					disease = "dysentery"
+					threshold = "8"
+				}
+			}
 		}
 	}
 	else_if = {
@@ -1131,6 +1073,12 @@ unit_to_territory_disease_effect = {
 			add_province_modifier = {
 				name = disease_14_pmod
 				duration = 365
+			}
+			random_pops_in_province = {
+				pop_death_variable_check = {
+					disease = "mentagra"
+					threshold = "12"
+				}
 			}
 		}
 	}
@@ -1143,6 +1091,12 @@ unit_to_territory_disease_effect = {
 				name = disease_15_pmod
 				duration = 365
 			}
+			random_pops_in_province = {
+				pop_death_variable_check = {
+					disease = "cold"
+					threshold = "12"
+				}
+			}
 		}
 	}
 	else_if = {
@@ -1154,6 +1108,12 @@ unit_to_territory_disease_effect = {
 				name = disease_16_pmod
 				duration = 365
 			}
+			random_pops_in_province = {
+				pop_death_variable_check = {
+					disease = "trachoma"
+					threshold = "12"
+				}
+			}
 		}
 	}
 	else_if = {
@@ -1164,6 +1124,12 @@ unit_to_territory_disease_effect = {
 			add_province_modifier = {
 				name = disease_17_pmod
 				duration = 365
+			}
+			random_pops_in_province = {
+				pop_death_variable_check = {
+					disease = "diphteria"
+					threshold = "6"
+				}
 			}
 		}
 	}
