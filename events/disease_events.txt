@@ -17,6 +17,7 @@
 # Mentagra (Sycosis)
 # Cold Fever - Common Cold
 # Trachoma
+# Diphtheria (misspelled as "Diphteria" in code)
 
 # No Siphylis; it probably is from the new world and appeared in Europe after Columbus' voyage.
 
