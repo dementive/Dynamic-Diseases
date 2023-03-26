@@ -369,6 +369,48 @@ recover_from_affliction_effect = {
 			}
 			remove_trait = plague
 		}
+		5 = {
+			trigger = {
+				has_trait = anthrax_trait
+			}
+			remove_trait = anthrax_trait
+		}
+		5 = {
+			trigger = {
+				has_trait = tularemia_trait
+			}
+			remove_trait = tularemia_trait
+		}
+		10 = {
+			trigger = {
+				has_trait = typhus_trait
+			}
+			remove_trait = typhus_trait
+		}
+		10 = {
+			trigger = {
+				has_trait = cholera_trait
+			}
+			remove_trait = cholera_trait
+		}
+		5 = {
+			trigger = {
+				has_trait = poliomyelitis_trait
+			}
+			remove_trait = poliomyelitis_trait
+		}
+		15 = {
+			trigger = {
+				has_trait = measles_trait
+			}
+			remove_trait = measles_trait
+		}
+		10 = {
+			trigger = {
+				has_trait = malaria_trait
+			}
+			remove_trait = malaria_trait
+		}
 	}
 	if = {
 		limit = {
@@ -493,6 +535,71 @@ set_treatment_variable_effect = {
 			value = 12
 		}
 	}
+
+	### Added by Mod
+	else_if = {
+		limit = {
+			has_trait = anthrax_trait
+		}
+		set_variable = {
+			name = seeking_treatment
+			value = 13
+		}
+	}
+	else_if = {
+		limit = {
+			has_trait = tularemia_trait
+		}
+		set_variable = {
+			name = seeking_treatment
+			value = 14
+		}
+	}
+	else_if = {
+		limit = {
+			has_trait = typhus_trait
+		}
+		set_variable = {
+			name = seeking_treatment
+			value = 15
+		}
+	}
+	else_if = {
+		limit = {
+			has_trait = cholera_trait
+		}
+		set_variable = {
+			name = seeking_treatment
+			value = 16
+		}
+	}
+	else_if = {
+		limit = {
+			has_trait = poliomyelitis_trait
+		}
+		set_variable = {
+			name = seeking_treatment
+			value = 17
+		}
+	}
+	else_if = {
+		limit = {
+			has_trait = measles_trait
+		}
+		set_variable = {
+			name = seeking_treatment
+			value = 18
+		}
+	}
+	else_if = {
+		limit = {
+			has_trait = malaria_trait
+		}
+		set_variable = {
+			name = seeking_treatment
+			value = 19
+		}
+	}
 }
 
 treatment_successful_effect = {
@@ -580,6 +687,59 @@ treatment_successful_effect = {
 		}
 		remove_trait = mentagra
 	}
+
+	### Added by Mod
+	else_if = {
+		limit = {
+			var:seeking_treatment = 13
+			has_trait = anthrax_trait
+		}
+		remove_trait = anthrax_trait
+	}
+	else_if = {
+		limit = {
+			var:seeking_treatment = 14
+			has_trait = tularemia_trait
+		}
+		remove_trait = tularemia_trait
+	}
+	else_if = {
+		limit = {
+			var:seeking_treatment = 15
+			has_trait = typhus_trait
+		}
+		remove_trait = typhus_trait
+	}
+	else_if = {
+		limit = {
+			var:seeking_treatment = 16
+			has_trait = cholera_trait
+		}
+		remove_trait = cholera_trait
+	}
+	else_if = {
+		limit = {
+			var:seeking_treatment = 17
+			has_trait = poliomyelitis_trait
+		}
+		remove_trait = poliomyelitis_trait
+	}
+	else_if = {
+		limit = {
+			var:seeking_treatment = 18
+			has_trait = measles_trait
+		}
+		remove_trait = measles_trait
+	}
+	else_if = {
+		limit = {
+			var:seeking_treatment = 19
+			has_trait = malaria_trait
+		}
+		remove_trait = malaria_trait
+	}
+
+
 	if = {
 		limit = {
 			has_variable = seeking_treatment
@@ -826,6 +986,56 @@ mystic_healing_effect = {
 			has_trait = brain_damaged
 		}
 		remove_trait = brain_damaged
+	}
+
+	### Added by Mod
+	if = {
+		limit = {
+			has_trait = anthrax_trait
+		}
+		remove_trait = anthrax_trait
+	}
+	if = {
+		limit = {
+			has_trait = tularemia_trait
+		}
+		remove_trait = tularemia_trait
+	}
+	if = {
+		limit = {
+			has_trait = typhus_trait
+		}
+		remove_trait = typhus_trait
+	}
+	if = {
+		limit = {
+			has_trait = poliomyelitis_trait
+		}
+		remove_trait = poliomyelitis_trait
+	}
+	if = {
+		limit = {
+			has_trait = cholera_trait
+		}
+		remove_trait = cholera_trait
+	}
+	if = {
+		limit = {
+			has_trait = tuberculosis_trait
+		}
+		remove_trait = tuberculosis_trait
+	}
+	if = {
+		limit = {
+			has_trait = measles_trait
+		}
+		remove_trait = measles_trait
+	}
+	if = {
+		limit = {
+			has_trait = malaria_trait
+		}
+		remove_trait = malaria_trait
 	}
 }
 

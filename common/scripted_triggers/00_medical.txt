@@ -57,6 +57,16 @@ recoverable_ailments_trigger = {
 		has_trait = pox
 		has_trait = arthritis
 		has_trait = mentagra
+
+		### Added by mod
+		has_trait = anthrax_trait
+		has_trait = tularemia_trait
+		has_trait = typhus_trait
+		has_trait = cholera_trait
+		#has_trait = tuberculosis_trait
+		has_trait = poliomyelitis_trait
+		has_trait = measles_trait
+		has_trait = malaria_trait
 	}
 }
 
@@ -98,6 +108,7 @@ has_any_fatal_ailment = {
 		has_trait = gangrene
 		has_trait = leper
 		has_trait = pox
+		has_trait = tuberculosis_trait
 	}
 }
 

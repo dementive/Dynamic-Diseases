@@ -21,26 +21,74 @@
 	}
 }
 
+pops_sanitation_impact_svalue = {
+	value = total_population
+	multiply = -0.1 # every X percent pop reduces sanitation
+	round = ceiling
+}
+
+pops_food_consumption_disease_svalue = {
+	value = state.has_state_food
+	add = {
+		value = pop_yearly_food_consumption_svalue # negative value
+		multiply = 2 # amount of years
+	}
+	# so that food isn't too strong; to be refined
+	min = -10 # immune system gets way weaker than what the maximum benefits are
+	max = 5
+}
+
+disease_aqueduct_num_svalue = {
+	value = 0
+	add = num_of_aqueduct_building
+}
+
+disease_workshop_num_svalue = { #mill
+	value = 0
+	subtract = num_of_workshop_building
+}
+
+disease_port_num_svalue = {
+	value = 0
+	subtract = num_of_port_building
+}
+
+sanitation_terrain_svalue = {
+	switch = {
+		trigger = terrain
+		desert = { add = 2 }
+		jungle = { add = -2 }
+		marsh = { add = -1 }
+	}
+
+	# if = { # the desert is generally too hot and difficult for quite a few bacteria
+	# 	limit = {
+	# 		terrain = desert
+	# 	}
+	# 	add = 2
+	# }
+	# if = { # The jungle is full of disease
+	# 	limit = {
+	# 		terrain = jungle
+	# 	}
+	# 	add = -2
+	# }
+	# if = { # The jungle is full of disease
+	# 	limit = {
+	# 		terrain = marsh
+	# 	}
+	# 	add = -1
+	# }
+}
+
 sanitation_svalue = {
 	### Province Scope; the idea is to have a dynamic value whether a disease breaking out is possible or not
 	### Add whatever parameters you want to have an impact
-	### TODO: Make visible in province view gui
+	### Adapt tooltip that is displayed in GUI when changed (sanitation_value_tooltip)
 
-	add = {
-		value = total_population
-		multiply = -0.1 # every X percent pop reduces sanitation
-	}
+	add = pops_sanitation_impact_svalue
 
-	add = { # Well-fed --> better immune system; can go negative, indicating the opposite
-		value = state.has_state_food
-		add = {
-			value = pop_yearly_food_consumption_svalue # negative value
-			multiply = 2 # amount of years
-		}
-		# so that food isn't too strong; to be refined
-		min = -10 # immune system gets way weaker than what the maximum benefits are
-		max = 5
-	}
+	add = pops_food_consumption_disease_svalue # Well-fed --> better immune system; can go negative, indicating the opposite
 
 	# Sanitary Buildings; make a tooltip marking sanitary effect in the affected buildings
 	add = num_of_aqueduct_building # reassess in case of dissociation with housing function
@@ -49,22 +97,187 @@ sanitation_svalue = {
 	subtract = num_of_workshop_building
 	subtract = num_of_port_building
 
-	if = { # the desert is generally too hot and difficult for quite a few bacteria
+	add = sanitation_terrain_svalue
+}
+
+diseased_pop_in_province_svalue = {
+	every_pops_in_province = {
 		limit = {
-			terrain = desert
+			OR = {
+				has_variable = plague_var
+				has_variable = anthrax_var
+				has_variable = tularemia_var
+				has_variable = typhus_var
+				has_variable = cholera_var
+				has_variable = leprosy_var
+				has_variable = smallpox_var
+				has_variable = tuberculosis_var
+				has_variable = influenza_var
+				has_variable = polio_var
+				has_variable = measles_var
+				has_variable = malaria_var
+				has_variable = dysentery_var
+				has_variable = diphteria_var
+				# not deadly
+				has_variable = mentagra_var
+				has_variable = trachoma_var # makes blind instead
+				has_variable = cold_var
+			}
 		}
-		add = 2
+		add = 1
 	}
-	if = { # The jungle is full of disease
+}
+
+plague_pop_in_province_svalue = {
+	every_pops_in_province = {
 		limit = {
-			terrain = jungle
+			has_variable = plague_var	
 		}
-		add = -2
+		add = 1
 	}
-	if = { # The jungle is full of disease
+}
+
+anthrax_pop_in_province_svalue = {
+	every_pops_in_province = {
 		limit = {
-			terrain = marsh
+			has_variable = anthrax_var
 		}
-		add = -1
+		add = 1
+	}
+}
+
+tularemia_pop_in_province_svalue = {
+	every_pops_in_province = {
+		limit = {
+			has_variable = tularemia_var
+		}
+		add = 1
+	}
+}
+
+typhus_pop_in_province_svalue = {
+	every_pops_in_province = {
+		limit = {
+			has_variable = typhus_var
+		}
+		add = 1
+	}
+}
+
+cholera_pop_in_province_svalue = {
+	every_pops_in_province = {
+		limit = {
+			has_variable = cholera_var
+		}
+		add = 1
+	}
+}
+
+leprosy_pop_in_province_svalue = {
+	every_pops_in_province = {
+		limit = {
+			has_variable = leprosy_var
+		}
+		add = 1
+	}
+}
+
+smallpox_pop_in_province_svalue = {
+	every_pops_in_province = {
+		limit = {
+			has_variable = smallpox_var
+		}
+		add = 1
+	}
+}
+
+tuberculosis_pop_in_province_svalue = {
+	every_pops_in_province = {
+		limit = {
+			has_variable = tuberculosis_var
+		}
+		add = 1
+	}
+}
+
+flu_pop_in_province_svalue = {
+	every_pops_in_province = {
+		limit = {
+			has_variable = influenza_var
+		}
+		add = 1
+	}
+}
+
+polio_pop_in_province_svalue = {
+	every_pops_in_province = {
+		limit = {
+			has_variable = polio_var
+		}
+		add = 1
+	}
+}
+
+
+measles_pop_in_province_svalue = {
+	every_pops_in_province = {
+		limit = {
+			has_variable = measles_var
+		}
+		add = 1
+	}
+}
+
+malaria_pop_in_province_svalue = {
+	every_pops_in_province = {
+		limit = {
+			has_variable = malaria_var
+		}
+		add = 1
+	}
+}
+
+dysentery_pop_in_province_svalue = {
+	every_pops_in_province = {
+		limit = {
+			has_variable = dysentery_var
+		}
+		add = 1
+	}
+}
+
+diphteria_pop_in_province_svalue = {
+	every_pops_in_province = {
+		limit = {
+			has_variable = diphteria_var
+		}
+		add = 1
+	}
+}
+
+mentagra_pop_in_province_svalue = {
+	every_pops_in_province = {
+		limit = {
+			has_variable = mentagra_var
+		}
+		add = 1
+	}
+}
+
+trachoma_pop_in_province_svalue = {
+	every_pops_in_province = {
+		limit = {
+			has_variable = trachoma_var
+		}
+		add = 1
+	}
+}
+
+cold_pop_in_province_svalue = {
+	every_pops_in_province = {
+		limit = {
+			has_variable = cold_var
+		}
+		add = 1
 	}
 }
