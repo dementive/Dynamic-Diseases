@@ -3702,7 +3702,7 @@ window = {
 										}
 										blockoverride "Text"
 										{
-											text = "[GuiScope.SetRoot( ProvinceWindow.GetProvince.MakeScope ).ScriptValue('sanitation_svalue')|0]"
+											text = "[GuiScope.SetRoot( ProvinceWindow.GetProvince.MakeScope ).ScriptValue('sanitation_svalue')|2]"
 										}
 									}
 									icon_and_text = {

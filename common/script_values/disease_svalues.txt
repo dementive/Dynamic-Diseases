@@ -24,7 +24,7 @@
 pops_sanitation_impact_svalue = {
 	value = total_population
 	multiply = -0.1 # every X percent pop reduces sanitation
-	round = ceiling
+	#round = ceiling
 }
 
 pops_food_consumption_disease_svalue = {
@@ -43,7 +43,7 @@ disease_aqueduct_num_svalue = {
 	add = num_of_aqueduct_building
 }
 
-disease_workshop_num_svalue = { #mill
+disease_workshops_num_svalue = { #mill
 	value = 0
 	subtract = num_of_workshop_building
 }
@@ -54,31 +54,28 @@ disease_port_num_svalue = {
 }
 
 sanitation_terrain_svalue = {
-	switch = {
-		trigger = terrain
-		desert = { add = 2 }
-		jungle = { add = -2 }
-		marsh = { add = -1 }
+	value = 0
+	if = { # the desert is generally too hot and difficult for quite a few bacteria
+		limit = {
+			terrain = desert
+		}
+		add = 2
 	}
-
-	# if = { # the desert is generally too hot and difficult for quite a few bacteria
-	# 	limit = {
-	# 		terrain = desert
-	# 	}
-	# 	add = 2
-	# }
-	# if = { # The jungle is full of disease
-	# 	limit = {
-	# 		terrain = jungle
-	# 	}
-	# 	add = -2
-	# }
-	# if = { # The jungle is full of disease
-	# 	limit = {
-	# 		terrain = marsh
-	# 	}
-	# 	add = -1
-	# }
+	if = { # The jungle is full of disease
+		limit = {
+			terrain = jungle
+		}
+		add = -2
+	}
+	if = { # The jungle is full of disease
+		limit = {
+			terrain = marsh
+		}
+		add = -1
+	}
+	else = {
+		add = 0
+	}
 }
 
 sanitation_svalue = {
