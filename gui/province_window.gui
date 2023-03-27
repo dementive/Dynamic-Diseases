@@ -3681,7 +3681,7 @@ window = {
 							
 							margin_widget = {
 								size = { 100% 40 }
-								position = { -205 60 }
+								position = { -100 50 }
 								hbox = {
 									spacing = 10
 									layoutpolicy_horizontal = expanding
@@ -3690,20 +3690,6 @@ window = {
 									}
 									widget = {
 										size = { @stats_icon_width 0 }
-									}
-									icon_and_text = {
-										name = "dieseased_pops_in_territory"
-										size = { @stats_icon_width 0 }
-										tooltip = "dieseased_pops_in_territory_tooltip"
-										blockoverride "Icon"
-										{
-											position = { 20 20 }
-											texture = "gfx/interface/icons/shared_icons/attrition.dds"
-										}
-										blockoverride "Text"
-										{
-											text = "[GuiScope.SetRoot( ProvinceWindow.GetProvince.MakeScope ).ScriptValue('diseased_pop_in_province_svalue')|0]"
-										}
 									}
 									icon_and_text = {
 										name = "sanitation_value"

@@ -93,191 +93,193 @@ sanitation_svalue = {
 	# Sanitary Buildings; make a tooltip marking sanitary effect in the affected buildings
 	add = num_of_aqueduct_building # reassess in case of dissociation with housing function
 
-	# The following are "unsanitary" buildings; make tooltips
+	# The following are "unsanitary" buildings
 	subtract = num_of_workshop_building
 	subtract = num_of_port_building
 
 	add = sanitation_terrain_svalue
 }
 
-diseased_pop_in_province_svalue = {
-	every_pops_in_province = {
-		limit = {
-			OR = {
-				has_variable = plague_var
-				has_variable = anthrax_var
-				has_variable = tularemia_var
-				has_variable = typhus_var
-				has_variable = cholera_var
-				has_variable = leprosy_var
-				has_variable = smallpox_var
-				has_variable = tuberculosis_var
-				has_variable = influenza_var
-				has_variable = polio_var
-				has_variable = measles_var
-				has_variable = malaria_var
-				has_variable = dysentery_var
-				has_variable = diphteria_var
-				# not deadly
-				has_variable = mentagra_var
-				has_variable = trachoma_var # makes blind instead
-				has_variable = cold_var
-			}
-		}
-		add = 1
-	}
-}
+## Since variables can't be set in the pop scope. Keep here in case of a miracle
 
-plague_pop_in_province_svalue = {
-	every_pops_in_province = {
-		limit = {
-			has_variable = plague_var	
-		}
-		add = 1
-	}
-}
+# diseased_pop_in_province_svalue = {
+# 	every_pops_in_province = {
+# 		limit = {
+# 			OR = {
+# 				has_variable = plague_var
+# 				has_variable = anthrax_var
+# 				has_variable = tularemia_var
+# 				has_variable = typhus_var
+# 				has_variable = cholera_var
+# 				has_variable = leprosy_var
+# 				has_variable = smallpox_var
+# 				has_variable = tuberculosis_var
+# 				has_variable = influenza_var
+# 				has_variable = polio_var
+# 				has_variable = measles_var
+# 				has_variable = malaria_var
+# 				has_variable = dysentery_var
+# 				has_variable = diphteria_var
+# 				# not deadly
+# 				has_variable = mentagra_var
+# 				has_variable = trachoma_var # makes blind instead
+# 				has_variable = cold_var
+# 			}
+# 		}
+# 		add = 1
+# 	}
+# }
 
-anthrax_pop_in_province_svalue = {
-	every_pops_in_province = {
-		limit = {
-			has_variable = anthrax_var
-		}
-		add = 1
-	}
-}
+# plague_pop_in_province_svalue = {
+# 	every_pops_in_province = {
+# 		limit = {
+# 			has_variable = plague_var	
+# 		}
+# 		add = 1
+# 	}
+# }
 
-tularemia_pop_in_province_svalue = {
-	every_pops_in_province = {
-		limit = {
-			has_variable = tularemia_var
-		}
-		add = 1
-	}
-}
+# anthrax_pop_in_province_svalue = {
+# 	every_pops_in_province = {
+# 		limit = {
+# 			has_variable = anthrax_var
+# 		}
+# 		add = 1
+# 	}
+# }
 
-typhus_pop_in_province_svalue = {
-	every_pops_in_province = {
-		limit = {
-			has_variable = typhus_var
-		}
-		add = 1
-	}
-}
+# tularemia_pop_in_province_svalue = {
+# 	every_pops_in_province = {
+# 		limit = {
+# 			has_variable = tularemia_var
+# 		}
+# 		add = 1
+# 	}
+# }
 
-cholera_pop_in_province_svalue = {
-	every_pops_in_province = {
-		limit = {
-			has_variable = cholera_var
-		}
-		add = 1
-	}
-}
+# typhus_pop_in_province_svalue = {
+# 	every_pops_in_province = {
+# 		limit = {
+# 			has_variable = typhus_var
+# 		}
+# 		add = 1
+# 	}
+# }
 
-leprosy_pop_in_province_svalue = {
-	every_pops_in_province = {
-		limit = {
-			has_variable = leprosy_var
-		}
-		add = 1
-	}
-}
+# cholera_pop_in_province_svalue = {
+# 	every_pops_in_province = {
+# 		limit = {
+# 			has_variable = cholera_var
+# 		}
+# 		add = 1
+# 	}
+# }
 
-smallpox_pop_in_province_svalue = {
-	every_pops_in_province = {
-		limit = {
-			has_variable = smallpox_var
-		}
-		add = 1
-	}
-}
+# leprosy_pop_in_province_svalue = {
+# 	every_pops_in_province = {
+# 		limit = {
+# 			has_variable = leprosy_var
+# 		}
+# 		add = 1
+# 	}
+# }
 
-tuberculosis_pop_in_province_svalue = {
-	every_pops_in_province = {
-		limit = {
-			has_variable = tuberculosis_var
-		}
-		add = 1
-	}
-}
+# smallpox_pop_in_province_svalue = {
+# 	every_pops_in_province = {
+# 		limit = {
+# 			has_variable = smallpox_var
+# 		}
+# 		add = 1
+# 	}
+# }
 
-flu_pop_in_province_svalue = {
-	every_pops_in_province = {
-		limit = {
-			has_variable = influenza_var
-		}
-		add = 1
-	}
-}
+# tuberculosis_pop_in_province_svalue = {
+# 	every_pops_in_province = {
+# 		limit = {
+# 			has_variable = tuberculosis_var
+# 		}
+# 		add = 1
+# 	}
+# }
 
-polio_pop_in_province_svalue = {
-	every_pops_in_province = {
-		limit = {
-			has_variable = polio_var
-		}
-		add = 1
-	}
-}
+# flu_pop_in_province_svalue = {
+# 	every_pops_in_province = {
+# 		limit = {
+# 			has_variable = influenza_var
+# 		}
+# 		add = 1
+# 	}
+# }
+
+# polio_pop_in_province_svalue = {
+# 	every_pops_in_province = {
+# 		limit = {
+# 			has_variable = polio_var
+# 		}
+# 		add = 1
+# 	}
+# }
 
 
-measles_pop_in_province_svalue = {
-	every_pops_in_province = {
-		limit = {
-			has_variable = measles_var
-		}
-		add = 1
-	}
-}
+# measles_pop_in_province_svalue = {
+# 	every_pops_in_province = {
+# 		limit = {
+# 			has_variable = measles_var
+# 		}
+# 		add = 1
+# 	}
+# }
 
-malaria_pop_in_province_svalue = {
-	every_pops_in_province = {
-		limit = {
-			has_variable = malaria_var
-		}
-		add = 1
-	}
-}
+# malaria_pop_in_province_svalue = {
+# 	every_pops_in_province = {
+# 		limit = {
+# 			has_variable = malaria_var
+# 		}
+# 		add = 1
+# 	}
+# }
 
-dysentery_pop_in_province_svalue = {
-	every_pops_in_province = {
-		limit = {
-			has_variable = dysentery_var
-		}
-		add = 1
-	}
-}
+# dysentery_pop_in_province_svalue = {
+# 	every_pops_in_province = {
+# 		limit = {
+# 			has_variable = dysentery_var
+# 		}
+# 		add = 1
+# 	}
+# }
 
-diphteria_pop_in_province_svalue = {
-	every_pops_in_province = {
-		limit = {
-			has_variable = diphteria_var
-		}
-		add = 1
-	}
-}
+# diphteria_pop_in_province_svalue = {
+# 	every_pops_in_province = {
+# 		limit = {
+# 			has_variable = diphteria_var
+# 		}
+# 		add = 1
+# 	}
+# }
 
-mentagra_pop_in_province_svalue = {
-	every_pops_in_province = {
-		limit = {
-			has_variable = mentagra_var
-		}
-		add = 1
-	}
-}
+# mentagra_pop_in_province_svalue = {
+# 	every_pops_in_province = {
+# 		limit = {
+# 			has_variable = mentagra_var
+# 		}
+# 		add = 1
+# 	}
+# }
 
-trachoma_pop_in_province_svalue = {
-	every_pops_in_province = {
-		limit = {
-			has_variable = trachoma_var
-		}
-		add = 1
-	}
-}
+# trachoma_pop_in_province_svalue = {
+# 	every_pops_in_province = {
+# 		limit = {
+# 			has_variable = trachoma_var
+# 		}
+# 		add = 1
+# 	}
+# }
 
-cold_pop_in_province_svalue = {
-	every_pops_in_province = {
-		limit = {
-			has_variable = cold_var
-		}
-		add = 1
-	}
-}
+# cold_pop_in_province_svalue = {
+# 	every_pops_in_province = {
+# 		limit = {
+# 			has_variable = cold_var
+# 		}
+# 		add = 1
+# 	}
+# }
