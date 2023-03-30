@@ -32,5 +32,4 @@ disease_pulse = {
     }
 
     ### We probably need an update event from time to time; every 20 provinces infected? maybe too common?
-    ### Also event that removes most disease traits; alternatively add traits to vanilla triggers, effects and events regarding char disease
 }

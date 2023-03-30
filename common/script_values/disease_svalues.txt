@@ -53,6 +53,16 @@ disease_port_num_svalue = {
 	subtract = num_of_port_building
 }
 
+disease_mine_num_svalue = {
+	value = 0
+	subtract = num_of_slave_mine_building
+}
+
+disease_farm_num_svalue = {
+	value = 0
+	subtract = num_of_basic_settlement_infratructure_building
+}
+
 sanitation_terrain_svalue = {
 	value = 0
 	if = { # the desert is generally too hot and difficult for quite a few bacteria
@@ -87,12 +97,14 @@ sanitation_svalue = {
 
 	add = pops_food_consumption_disease_svalue # Well-fed --> better immune system; can go negative, indicating the opposite
 
-	# Sanitary Buildings; make a tooltip marking sanitary effect in the affected buildings
+	# Sanitary Buildings
 	add = num_of_aqueduct_building # reassess in case of dissociation with housing function
 
 	# The following are "unsanitary" buildings
 	subtract = num_of_workshop_building
 	subtract = num_of_port_building
+	subtract = num_of_basic_settlement_infratructure_building
+	subtract = num_of_slave_mine_building
 
 	add = sanitation_terrain_svalue
 }
