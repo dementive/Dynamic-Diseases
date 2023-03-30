@@ -1263,6 +1263,11 @@ disease_to_characters_effect = { # governorship scope
 			capital_scope = {
 				has_province_modifier = disease_1_pmod
 			}
+			governor_or_ruler = {
+				NOT = {
+					has_trait = plague
+				}
+			}
 		}
 		governor_or_ruler = {
 			add_trait = plague
@@ -1272,6 +1277,11 @@ disease_to_characters_effect = { # governorship scope
 		limit = {
 			capital_scope = {
 				has_province_modifier = disease_2_pmod
+			}
+			governor_or_ruler = {
+				NOT = {
+					has_trait = anthrax_trait
+				}
 			}
 		}
 		governor_or_ruler = {
@@ -1283,6 +1293,11 @@ disease_to_characters_effect = { # governorship scope
 			capital_scope = {
 				has_province_modifier = disease_3_pmod
 			}
+			governor_or_ruler = {
+				NOT = {
+					has_trait = tularemia_trait
+				}
+			}
 		}
 		governor_or_ruler = {
 			add_trait = tularemia_trait
@@ -1292,6 +1307,11 @@ disease_to_characters_effect = { # governorship scope
 		limit = {
 			capital_scope = {
 				has_province_modifier = disease_4_pmod
+			}
+			governor_or_ruler = {
+				NOT = {
+					has_trait = typhus_trait
+				}
 			}
 		}
 		governor_or_ruler = {
@@ -1303,6 +1323,11 @@ disease_to_characters_effect = { # governorship scope
 			capital_scope = {
 				has_province_modifier = disease_5_pmod
 			}
+			governor_or_ruler = {
+				NOT = {
+					has_trait = cholera_trait
+				}
+			}
 		}
 		governor_or_ruler = {
 			add_trait = cholera_trait
@@ -1312,6 +1337,11 @@ disease_to_characters_effect = { # governorship scope
 		limit = {
 			capital_scope = {
 				has_province_modifier = disease_6_pmod
+			}
+			governor_or_ruler = {
+				NOT = {
+					has_trait = leper
+				}
 			}
 		}
 		governor_or_ruler = {
@@ -1323,6 +1353,11 @@ disease_to_characters_effect = { # governorship scope
 			capital_scope = {
 				has_province_modifier = disease_7_pmod
 			}
+			governor_or_ruler = {
+				NOT = {
+					has_trait = pox
+				}
+			}
 		}
 		governor_or_ruler = {
 			add_trait = pox
@@ -1332,6 +1367,11 @@ disease_to_characters_effect = { # governorship scope
 		limit = {
 			capital_scope = {
 				has_province_modifier = disease_8_pmod
+			}
+			governor_or_ruler = {
+				NOT = {
+					has_trait = tuberculosis_trait
+				}
 			}
 		}
 		governor_or_ruler = {
@@ -1343,6 +1383,11 @@ disease_to_characters_effect = { # governorship scope
 			capital_scope = {
 				has_province_modifier = disease_9_pmod
 			}
+			governor_or_ruler = {
+				NOT = {
+					has_trait = infection
+				}
+			}
 		}
 		governor_or_ruler = {
 			add_trait = infection
@@ -1352,6 +1397,12 @@ disease_to_characters_effect = { # governorship scope
 		limit = {
 			capital_scope = {
 				has_province_modifier = disease_10_pmod
+			}
+			governor_or_ruler = {
+				NOR = {
+					has_trait = paralysis
+					has_trait = poliomyelitis_trait
+				}
 			}
 		}
 		governor_or_ruler = {
@@ -1367,6 +1418,11 @@ disease_to_characters_effect = { # governorship scope
 			capital_scope = {
 				has_province_modifier = disease_11_pmod
 			}
+			governor_or_ruler = {
+				NOT = {
+					has_trait = measles_trait
+				}
+			}
 		}
 		governor_or_ruler = {
 			add_trait = measles_trait
@@ -1376,6 +1432,11 @@ disease_to_characters_effect = { # governorship scope
 		limit = {
 			capital_scope = {
 				has_province_modifier = disease_12_pmod
+			}
+			governor_or_ruler = {
+				NOT = {
+					has_trait = malaria_trait
+				}
 			}
 		}
 		governor_or_ruler = {
@@ -1387,6 +1448,11 @@ disease_to_characters_effect = { # governorship scope
 			capital_scope = {
 				has_province_modifier = disease_13_pmod
 			}
+			governor_or_ruler = {
+				NOT = {
+					has_trait = dysentery
+				}
+			}
 		}
 		governor_or_ruler = {
 			add_trait = dysentery
@@ -1396,6 +1462,11 @@ disease_to_characters_effect = { # governorship scope
 		limit = {
 			capital_scope = {
 				has_province_modifier = disease_14_pmod
+			}
+			governor_or_ruler = {
+				NOT = {
+					has_trait = mentagra
+				}
 			}
 		}
 		governor_or_ruler = {
@@ -1407,6 +1478,11 @@ disease_to_characters_effect = { # governorship scope
 			capital_scope = {
 				has_province_modifier = disease_15_pmod
 			}
+			governor_or_ruler = {
+				NOT = {
+					has_trait = infection
+				}
+			}
 		}
 		governor_or_ruler = {
 			add_trait = infection
@@ -1417,6 +1493,11 @@ disease_to_characters_effect = { # governorship scope
 			capital_scope = {
 				has_province_modifier = disease_16_pmod
 			}
+			governor_or_ruler = {
+				NOT = {
+					has_trait = blind
+				}
+			}
 		}
 		governor_or_ruler = {
 			add_trait = blind
@@ -1426,6 +1507,11 @@ disease_to_characters_effect = { # governorship scope
 		limit = {
 			capital_scope = {
 				has_province_modifier = disease_17_pmod
+			}
+			governor_or_ruler = {
+				NOT = {
+					has_trait = diphtheria
+				}
 			}
 		}
 		governor_or_ruler = {
