@@ -1,0 +1,73 @@
+﻿country_decisions = {
+	disease_where = {
+		potential = {
+			any_province = {
+				has_province_disease_trigger = yes
+			}
+		}
+		
+		allow = {
+			always = no
+		}
+
+		highlight = {
+			scope:province = {
+				OR = {
+					has_province_disease_trigger = yes
+				}
+			}
+		}
+
+		effect = {
+			custom_tooltip = disease_where_tt
+		}
+	}
+
+	### The game gets fucked when directly checking for the script value due to the state component, so two decisions via using a variable
+	san_val_var_dec = {
+		potential = {
+			NOT = {
+				any_owned_province = {
+					has_variable = san_val_temp_var
+				}
+			}
+		}
+
+		effect = {
+			custom_tooltip = san_temp_var_tt
+			every_owned_province = {
+				set_variable = {
+					name = san_val_temp_var
+					value = sanitation_svalue
+				}
+			}
+		}
+	}
+
+	neg_san = {
+		potential = {
+			any_owned_province = {
+				has_variable = san_val_temp_var
+			}
+		}
+
+		highlight = {
+			scope:province = {
+				owner = root
+				OR = {
+					var:san_val_temp_var < 0
+				}
+			}
+		}
+
+		effect = {
+			custom_tooltip = refresh_temp_san_var_tt
+			every_owned_province = {
+				limit = {
+					has_variable = san_val_temp_var
+				}
+				remove_variable = san_val_temp_var
+			}
+		}
+	}
+}

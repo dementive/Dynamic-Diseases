@@ -338,7 +338,7 @@ rip_disease.2 = { # Disease Appearing - Plague
 		custom_tooltip = possible_spread_tt
 		disease_in_province_effect = {
 			mod = "disease_1_pmod"
-			disease = "plague"
+			#disease = "plague"
 		}
 	}
 	option = {
@@ -346,7 +346,7 @@ rip_disease.2 = { # Disease Appearing - Plague
 		custom_tooltip = quarantine_tt
 		quarantine_province_effect = {
 			mod = "disease_1_pmod"
-			disease = "plague"
+			#disease = "plague"
 		}
 	}
 }
@@ -364,7 +364,7 @@ rip_disease.3 = { # Disease Appearing - Anthrax - Human to Human non-contagious;
 		name = rip_disease.3.a
 		disease_in_province_effect = {
 			mod = "disease_2_pmod"
-			disease = "anthrax"
+			#disease = "anthrax"
 		}
 	}
 
@@ -373,7 +373,7 @@ rip_disease.3 = { # Disease Appearing - Anthrax - Human to Human non-contagious;
 		custom_tooltip = quarantine_tt
 		quarantine_province_effect = {
 			mod = "disease_2_pmod"
-			disease = "anthrax"
+			#disease = "anthrax"
 		}
 	}
 }
@@ -392,7 +392,7 @@ rip_disease.4 = { # Disease Appearing - Tularemia
 		custom_tooltip = possible_spread_tt
 		disease_in_province_effect = {
 			mod = "disease_3_pmod"
-			disease = "tularemia"
+			#disease = "tularemia"
 		}
 	}
 	option = {
@@ -400,7 +400,7 @@ rip_disease.4 = { # Disease Appearing - Tularemia
 		custom_tooltip = quarantine_tt
 		quarantine_province_effect = {
 			mod = "disease_3_pmod"
-			disease = "tularemia"
+			#disease = "tularemia"
 		}
 	}
 }
@@ -418,7 +418,7 @@ rip_disease.5 = { # Disease Appearing - Typhus
 		name = rip_disease.5.a
 		disease_in_province_effect = {
 			mod = "disease_4_pmod"
-			disease = "typhus"
+			#disease = "typhus"
 		}
 	}
 
@@ -427,7 +427,7 @@ rip_disease.5 = { # Disease Appearing - Typhus
 		custom_tooltip = quarantine_tt
 		quarantine_province_effect = {
 			mod = "disease_4_pmod"
-			disease = "typhus"
+			#disease = "typhus"
 		}
 	}
 }
@@ -445,7 +445,7 @@ rip_disease.6 = { # Disease Appearing - Cholera
 		name = rip_disease.6.a
 		disease_in_province_effect = {
 			mod = "disease_5_pmod"
-			disease = "cholera"
+			#disease = "cholera"
 		}
 	}
 
@@ -454,7 +454,7 @@ rip_disease.6 = { # Disease Appearing - Cholera
 		custom_tooltip = quarantine_tt
 		quarantine_province_effect = {
 			mod = "disease_5_pmod"
-			disease = "cholera"
+			#disease = "cholera"
 		}
 	}
 }
@@ -472,7 +472,7 @@ rip_disease.7 = { # Disease Appearing - Leprosy
 		name = rip_disease.7.a
 		disease_in_province_effect = {
 			mod = "disease_6_pmod"
-			disease = "leprosy"
+			#disease = "leprosy"
 		}
 	}
 
@@ -481,7 +481,7 @@ rip_disease.7 = { # Disease Appearing - Leprosy
 		custom_tooltip = quarantine_tt
 		quarantine_province_effect = {
 			mod = "disease_6_pmod"
-			disease = "leprosy"
+			#disease = "leprosy"
 		}
 	}
 }
@@ -500,7 +500,7 @@ rip_disease.8 = { # Disease Appearing - Smallpox
 		custom_tooltip = possible_spread_tt
 		disease_in_province_effect = {
 			mod = "disease_7_pmod"
-			disease = "smallpox"
+			#disease = "smallpox"
 		}
 	}
 	option = {
@@ -508,7 +508,7 @@ rip_disease.8 = { # Disease Appearing - Smallpox
 		custom_tooltip = quarantine_tt
 		quarantine_province_effect = {
 			mod = "disease_7_pmod"
-			disease = "smallpox"
+			#disease = "smallpox"
 		}
 	}
 }
@@ -526,7 +526,7 @@ rip_disease.9 = { # Disease Appearing - Tuberculosis
 		name = rip_disease.9.a
 		disease_in_province_effect = {
 			mod = "disease_8_pmod"
-			disease = "tuberculosis"
+			#disease = "tuberculosis"
 		}
 	}
 
@@ -535,7 +535,7 @@ rip_disease.9 = { # Disease Appearing - Tuberculosis
 		custom_tooltip = quarantine_tt
 		quarantine_province_effect = {
 			mod = "disease_8_pmod"
-			disease = "tuberculosis"
+			#disease = "tuberculosis"
 		}
 	}
 }
@@ -554,7 +554,7 @@ rip_disease.10 = { # Disease Appearing - Influenza - Flu
 		custom_tooltip = possible_spread_tt
 		disease_in_province_effect = {
 			mod = "disease_9_pmod"
-			disease = "influenza"
+			#disease = "influenza"
 		}
 	}
 	option = {
@@ -562,7 +562,7 @@ rip_disease.10 = { # Disease Appearing - Influenza - Flu
 		custom_tooltip = quarantine_tt
 		quarantine_province_effect = {
 			mod = "disease_9_pmod"
-			disease = "influenza"
+			#disease = "influenza"
 		}
 	}
 }
@@ -580,7 +580,7 @@ rip_disease.11 = { # Disease Appearing - Poliomyelitis - Polio
 		name = rip_disease.11.a
 		disease_in_province_effect = {
 			mod = "disease_10_pmod"
-			disease = "polio"
+			#disease = "polio"
 		}
 	}
 
@@ -589,7 +589,7 @@ rip_disease.11 = { # Disease Appearing - Poliomyelitis - Polio
 		custom_tooltip = quarantine_tt
 		quarantine_province_effect = {
 			mod = "disease_10_pmod"
-			disease = "polio"
+			#disease = "polio"
 		}
 	}
 }
@@ -607,7 +607,7 @@ rip_disease.12 = { # Disease Appearing - Measles
 		name = rip_disease.12.a
 		disease_in_province_effect = {
 			mod = "disease_11_pmod"
-			disease = "measles"
+			#disease = "measles"
 		}
 	}
 
@@ -616,7 +616,7 @@ rip_disease.12 = { # Disease Appearing - Measles
 		custom_tooltip = quarantine_tt
 		quarantine_province_effect = {
 			mod = "disease_11_pmod"
-			disease = "measles"
+			#disease = "measles"
 		}
 	}
 }
@@ -634,7 +634,7 @@ rip_disease.13 = { # Disease Appearing - Malaria
 		name = rip_disease.13.a
 		disease_in_province_effect = {
 			mod = "disease_12_pmod"
-			disease = "malaria"
+			#disease = "malaria"
 		}
 	}
 
@@ -643,7 +643,7 @@ rip_disease.13 = { # Disease Appearing - Malaria
 		custom_tooltip = quarantine_tt
 		quarantine_province_effect = {
 			mod = "disease_12_pmod"
-			disease = "malaria"
+			#disease = "malaria"
 		}
 	}
 }
@@ -661,7 +661,7 @@ rip_disease.14 = { # Disease Appearing - Dysentery
 		name = rip_disease.14.a
 		disease_in_province_effect = {
 			mod = "disease_13_pmod"
-			disease = "dysentery"
+			#disease = "dysentery"
 		}
 	}
 
@@ -670,7 +670,7 @@ rip_disease.14 = { # Disease Appearing - Dysentery
 		custom_tooltip = quarantine_tt
 		quarantine_province_effect = {
 			mod = "disease_13_pmod"
-			disease = "dysentery"
+			#disease = "dysentery"
 		}
 	}
 }
@@ -688,7 +688,7 @@ rip_disease.15 = { # Disease Appearing - Mentagra
 		name = rip_disease.15.a
 		disease_in_province_effect = {
 			mod = "disease_14_pmod"
-			disease = "mentagra"
+			#disease = "mentagra"
 		}
 	}
 
@@ -697,7 +697,7 @@ rip_disease.15 = { # Disease Appearing - Mentagra
 		custom_tooltip = quarantine_tt
 		quarantine_province_effect = {
 			mod = "disease_14_pmod"
-			disease = "mentagra"
+			#disease = "mentagra"
 		}
 	}
 }
@@ -715,7 +715,7 @@ rip_disease.16 = { # Disease Appearing - Common Cold
 		name = rip_disease.16.a
 		disease_in_province_effect = {
 			mod = "disease_15_pmod"
-			disease = "cold"
+			#disease = "cold"
 		}
 	}
 
@@ -724,7 +724,7 @@ rip_disease.16 = { # Disease Appearing - Common Cold
 		custom_tooltip = quarantine_tt
 		quarantine_province_effect = {
 			mod = "disease_15_pmod"
-			disease = "cold"
+			#disease = "cold"
 		}
 	}
 }
@@ -742,7 +742,7 @@ rip_disease.17 = { # Trachoma
 		name = rip_disease.17.a
 		disease_in_province_effect = {
 			mod = "disease_16_pmod"
-			disease = "trachoma"
+			#disease = "trachoma"
 		}
 	}
 
@@ -751,7 +751,7 @@ rip_disease.17 = { # Trachoma
 		custom_tooltip = quarantine_tt
 		quarantine_province_effect = {
 			mod = "disease_16_pmod"
-			disease = "trachoma"
+			#disease = "trachoma"
 		}
 	}
 }
@@ -769,7 +769,7 @@ rip_disease.18 = { # Diphteria
 		name = rip_disease.18.a
 		disease_in_province_effect = {
 			mod = "disease_17_pmod"
-			disease = "diphteria"
+			#disease = "diphteria"
 		}
 	}
 
@@ -778,7 +778,7 @@ rip_disease.18 = { # Diphteria
 		custom_tooltip = quarantine_tt
 		quarantine_province_effect = {
 			mod = "disease_17_pmod"
-			disease = "diphteria"
+			#disease = "diphteria"
 		}
 	}
 }

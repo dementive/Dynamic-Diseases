@@ -23,7 +23,7 @@
 
 pops_sanitation_impact_svalue = {
 	value = total_population
-	multiply = -0.1 # every X percent pop reduces sanitation
+	multiply = -0.25 # every X percent pop reduces sanitation
 	#round = ceiling
 }
 
@@ -61,6 +61,16 @@ disease_mine_num_svalue = {
 disease_farm_num_svalue = {
 	value = 0
 	subtract = num_of_basic_settlement_infratructure_building
+}
+
+disease_market_num_svalue = {
+	value = 0
+	subtract = num_of_commerce_building
+}
+
+disease_barracks_num_svalue = {
+	value = 0
+	subtract = num_of_barracks_building
 }
 
 sanitation_terrain_svalue = {
@@ -105,6 +115,8 @@ sanitation_svalue = {
 	subtract = num_of_port_building
 	subtract = num_of_basic_settlement_infratructure_building
 	subtract = num_of_slave_mine_building
+	subtract = disease_market_num_svalue
+	subtract = disease_barracks_num_svalue
 
 	add = sanitation_terrain_svalue
 }
