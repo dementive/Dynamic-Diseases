@@ -1,7 +1,7 @@
 ﻿l_english:
 
 # Tooltips
-quarantine_tt:0 "The province will be quarantined and spread of the disease much #G less likely#!."
+quarantine_tt:0 "The province will be quarantined and spread of the disease will be much #G less likely#!."
 possible_spread_tt:0 "The disease is #R likely#! to spread to neighbouring provinces."
 
 sanitation_value_tooltip:0 "#T Sanitation Value#! \nThe current value is #Y [GuiScope.SetRoot( ProvinceWindow.GetProvince.MakeScope ).ScriptValue('sanitation_svalue')|2]#! \n\nThis is due to: \nLocal Pops: #R [GuiScope.SetRoot( ProvinceWindow.GetProvince.MakeScope ).ScriptValue('pops_sanitation_impact_svalue')|2]#!  \nStored Food:  #Y [GuiScope.SetRoot( ProvinceWindow.GetProvince.MakeScope ).ScriptValue('pops_food_consumption_disease_svalue')|2]#! \nNumber of Aqueducts: #G [GuiScope.SetRoot( ProvinceWindow.GetProvince.MakeScope ).ScriptValue('disease_aqueduct_num_svalue')|2]#! \nNumber of Ports: #R [GuiScope.SetRoot( ProvinceWindow.GetProvince.MakeScope ).ScriptValue('disease_port_num_svalue')|2]#! \nNumber of Mills: #R [GuiScope.SetRoot( ProvinceWindow.GetProvince.MakeScope ).ScriptValue('disease_workshops_num_svalue')|2]#! \nNumber of Mines: #R [GuiScope.SetRoot( ProvinceWindow.GetProvince.MakeScope ).ScriptValue('disease_mine_num_svalue')|2]#! \nNumber of Farms: #R [GuiScope.SetRoot( ProvinceWindow.GetProvince.MakeScope ).ScriptValue('disease_farm_num_svalue')|2]#! \nTerrain: #Y [GuiScope.SetRoot( ProvinceWindow.GetProvince.MakeScope ).ScriptValue('sanitation_terrain_svalue')|2]#! \n\nThese factors influence the sanitation value of this territory. A total #G positive#! value makes the #R outbreak#! and #R spread#! of #Y diseases#! much #G less#! likely."
