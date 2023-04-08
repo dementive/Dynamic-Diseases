@@ -911,19 +911,43 @@ rip_disease.100 = { # disease spread
 					}
 					if = {
 						limit = {
-							scope:disease_province = {
-								has_province_modifier = quarantine_pmod
+							sanitation_svalue < 0 # less than 0
+						}
+						if = {
+							limit = {
+								scope:disease_province = {
+									has_province_modifier = quarantine_pmod
+								}
+							}
+							random = {
+								chance = { 15 25 }
+								disease_spread_effect = yes
 							}
 						}
-						random = {
-							chance = { 15 25 }
-							disease_spread_effect = yes
+						else = {
+							random = {
+								chance = { 60 80 }
+								disease_spread_effect = yes
+							}
 						}
 					}
-					else = {
-						random = {
-							chance = { 60 80 }
-							disease_spread_effect = yes
+					else = { # i.e. if larger than 0
+						if = {
+							limit = {
+								scope:disease_province = {
+									has_province_modifier = quarantine_pmod
+								}
+							}
+							random = {
+								chance = { 10 20 }
+								disease_spread_effect = yes
+							}
+						}
+						else = {
+							random = {
+								chance = { 45 60 }
+								disease_spread_effect = yes
+							}
 						}
 					}
 				}
@@ -940,19 +964,43 @@ rip_disease.100 = { # disease spread
 					}
 					if = {
 						limit = {
-							scope:disease_province = {
-								has_province_modifier = quarantine_pmod
+							sanitation_svalue < 0 # less than 0
+						}
+						if = {
+							limit = {
+								scope:disease_province = {
+									has_province_modifier = quarantine_pmod
+								}
+							}
+							random = {
+								chance = { 5 10 }
+								disease_spread_effect = yes
 							}
 						}
-						random = {
-							chance = { 5 10 }
-							disease_spread_effect = yes
+						else = {
+							random = {
+								chance = { 40 70 }
+								disease_spread_effect = yes
+							}
 						}
 					}
 					else = {
-						random = {
-							chance = { 40 70 }
-							disease_spread_effect = yes
+						if = {
+							limit = {
+								scope:disease_province = {
+									has_province_modifier = quarantine_pmod
+								}
+							}
+							random = {
+								chance = 5
+								disease_spread_effect = yes
+							}
+						}
+						else = {
+							random = {
+								chance = { 25 50 }
+								disease_spread_effect = yes
+							}
 						}
 					}
 				}
@@ -1005,9 +1053,22 @@ rip_disease.100 = { # disease spread
 						}
 					}
 				}
-				random = {
-					chance = { 25 50 }
-					unit_to_territory_disease_effect = yes # scoping to unit_location in the effect
+				if = {
+					limit = {
+						unit_location = {
+							sanitation_svalue < 0 # less than 0
+						}
+					}
+					random = {
+						chance = { 40 70 }
+						unit_to_territory_disease_effect = yes # scoping to unit_location in the effect
+					}
+				}
+				else = {
+					random = {
+						chance = { 25 50 }
+						unit_to_territory_disease_effect = yes # scoping to unit_location in the effect
+					}
 				}
 			}
 		}
